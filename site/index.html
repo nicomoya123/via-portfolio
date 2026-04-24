@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avia Ben Uriah — Issue 28, Spring 2026</title>
+    <meta name="description" content="The portfolio of Avia Ben Uriah — brand narrative, content marketing, screenwriting, and creative work. Tel Aviv, Spring 2026.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Inter:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=18">
+
+    <style>
+        /* Tweaks panel — hidden by default, visible when .tweaks-open on body */
+        .tweaks-panel {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 300px;
+            background: var(--cream);
+            border: 1px solid var(--ink);
+            padding: 18px 20px;
+            font-family: var(--label);
+            font-size: 12px;
+            color: var(--ink);
+            z-index: 100;
+            display: none;
+            box-shadow: 4px 4px 0 var(--ink);
+        }
+        body.tweaks-open .tweaks-panel { display: block; }
+        .tweaks-panel__title {
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-size: 11px;
+            color: var(--rust);
+            margin: 0 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--rule);
+        }
+        .tweaks-panel__note {
+            font-family: var(--serif-body);
+            font-size: 12px;
+            font-style: italic;
+            color: var(--ink-60, #6b5b4a);
+            margin: 0 0 14px;
+            line-height: 1.4;
+        }
+        .tweaks-panel__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            gap: 12px;
+            border-top: 1px dashed var(--rule);
+        }
+        .tweaks-panel__row:first-of-type { border-top: none; padding-top: 2px; }
+        .tweaks-panel__label {
+            font-family: var(--serif-body);
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.3;
+        }
+        .tweaks-panel__label small {
+            display: block;
+            font-family: var(--label);
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-60, #6b5b4a);
+            margin-top: 2px;
+        }
+        .tweaks-panel__switch {
+            cursor: pointer;
+            width: 40px;
+            height: 22px;
+            background: var(--ink-20, #d9cfc4);
+            border: 1px solid var(--ink);
+            border-radius: 999px;
+            position: relative;
+            transition: background 180ms ease;
+            flex-shrink: 0;
+            padding: 0;
+        }
+        .tweaks-panel__switch::after {
+            content: "";
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 18px;
+            height: 18px;
+            background: var(--cream);
+            border-radius: 50%;
+            border: 1px solid var(--ink);
+            transition: transform 180ms ease;
+        }
+        .tweaks-panel__switch[aria-checked="true"] { background: var(--rust); }
+        .tweaks-panel__switch[aria-checked="true"]::after { transform: translateX(18px); }
+        .tweaks-panel__replay {
+            margin-top: 12px;
+            width: 100%;
+            border: 1px solid var(--ink);
+            background: var(--cream);
+            color: var(--ink);
+            font-family: var(--label);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+        .tweaks-panel__replay:hover { background: var(--ink); color: var(--cream); }
+    </style>
+</head>
+<body class="cover-page" data-variant="cover">
+
+<a class="skip-link" href="#main">Skip to contents</a>
+
+<header class="masthead" role="banner">
+    <div class="masthead__brand"><a href="index.html">Avia Ben Uriah</a></div>
+    <div class="masthead__meta">Issue 28 · Spring 2026</div>
+</header>
+
+<!-- Ticker strip (animation c) — hidden unless .anim-ticker is on body -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+        <span>Brand Narrative</span><span class="dot">●</span>
+        <span>Creative</span><span class="dot">●</span>
+        <span>Content Marketing</span><span class="dot">●</span>
+        <span>Screenwriting</span><span class="dot">●</span>
+        <span>Tel Aviv</span><span class="dot">●</span>
+        <span>Issue 28</span><span class="dot">●</span>
+        <span>Spring 2026</span><span class="dot">●</span>
+        <!-- duplicate for seamless loop -->
+        <span>Brand Narrative</span><span class="dot">●</span>
+        <span>Creative</span><span class="dot">●</span>
+        <span>Content Marketing</span><span class="dot">●</span>
+        <span>Screenwriting</span><span class="dot">●</span>
+        <span>Tel Aviv</span><span class="dot">●</span>
+        <span>Issue 28</span><span class="dot">●</span>
+        <span>Spring 2026</span><span class="dot">●</span>
+    </div>
+</div>
+
+<main id="main">
+    <section class="cover">
+        <div class="cover__hero">
+            <h1 class="cover__masthead-word" aria-label="Avia Ben Uriah">
+                <!-- chars get injected by JS, each in a .ch span with --i index -->
+                Avia Ben Uriah
+            </h1>
+
+            <p class="cover__disciplines">
+                <span>Brand Narrative</span><span class="dot" aria-hidden="true">·</span><span>Creative</span><span class="dot" aria-hidden="true">·</span><span>Content Marketing</span><span class="dot" aria-hidden="true">·</span><span>Screenwriting</span>
+            </p>
+
+            <p class="cover__standfirst">
+                <span class="cover__standfirst-rust">&ldquo;The most personal is the most creative.&rdquo;</span><br>
+                <em class="cover__standfirst-ink">Martin Scorsese said it.<br>I try to work by it.</em>
+            </p>
+
+            <p class="cover__dateline label label--muted">
+                Tel Aviv <span class="dot">·</span> Spring 2026 <span class="dot">·</span> Portfolio, Issue 28
+            </p>
+
+            <a class="cover__scroll-cue" href="#toc" aria-label="Scroll to contents">
+                <span>In this issue</span>
+                <span class="arrow" aria-hidden="true">↓</span>
+            </a>
+        </div>
+
+        <nav class="toc" id="toc" aria-label="In this issue">
+            <p class="toc__title">Issue 28 — Contents</p>
+            <ol class="toc__list">
+                <li class="toc__item" style="--i:0">
+                    <a class="toc__link" href="impact-arena.html">
+                        <span class="toc__num">No. 01</span>
+                        <span class="toc__title-text">The Impact Arena — Where research meets reality</span>
+                        <span class="toc__arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+                <li class="toc__item" style="--i:1">
+                    <a class="toc__link" href="tau-shop.html">
+                        <span class="toc__num">No. 02</span>
+                        <span class="toc__title-text">TAU Shop — The university&rsquo;s first online store</span>
+                        <span class="toc__arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+                <li class="toc__item" style="--i:2">
+                    <a class="toc__link" href="blockbusters.html">
+                        <span class="toc__num">No. 03</span>
+                        <span class="toc__title-text">The Blockbusters Podcast — A branded Web3 show</span>
+                        <span class="toc__arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+                <li class="toc__item" style="--i:3">
+                    <a class="toc__link" href="essays.html">
+                        <span class="toc__num">No. 04</span>
+                        <span class="toc__title-text">B2B Content Marketing — Voice, authority, presence</span>
+                        <span class="toc__arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+                <li class="toc__item toc__item--meta" style="--i:4">
+                    <a class="toc__link" href="about.html">
+                        <span class="toc__num">&mdash;</span>
+                        <span class="toc__title-text">About &amp; contact</span>
+                        <span class="toc__arrow" aria-hidden="true">→</span>
+                    </a>
+                </li>
+            </ol>
+        </nav>
+    </section>
+</main>
+
+<footer class="colophon" role="contentinfo">
+    <div class="colophon__inner">
+        <div class="colophon__col colophon__col--left">
+            Avia Ben Uriah <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2026
+        </div>
+        <div class="colophon__col colophon__col--center">
+            <a href="about.html">About &amp; contact</a>
+        </div>
+        <div class="colophon__col colophon__col--right">
+            Issue 28
+        </div>
+    </div>
+</footer>
+
+<!-- Tweaks panel — toggled via the host toolbar's Tweaks switch -->
+<aside class="tweaks-panel" aria-label="Tweaks">
+    <p class="tweaks-panel__title">Cover · Animation Explorer</p>
+    <p class="tweaks-panel__note">Toggle each effect independently. All start off — turn them on to preview. Click Replay to re-run.</p>
+
+    <div class="tweaks-panel__row">
+        <label id="tweak-letter-label" class="tweaks-panel__label" for="tweak-letter">
+            Letter drop
+            <small>Masthead</small>
+        </label>
+        <button id="tweak-letter" class="tweaks-panel__switch" role="switch" aria-checked="false" aria-labelledby="tweak-letter-label" data-anim="letter"></button>
+    </div>
+
+    <div class="tweaks-panel__row">
+        <label id="tweak-typewriter-label" class="tweaks-panel__label" for="tweak-typewriter">
+            Typewriter
+            <small>Standfirst</small>
+        </label>
+        <button id="tweak-typewriter" class="tweaks-panel__switch" role="switch" aria-checked="false" aria-labelledby="tweak-typewriter-label" data-anim="typewriter"></button>
+    </div>
+
+    <div class="tweaks-panel__row">
+        <label id="tweak-ticker-label" class="tweaks-panel__label" for="tweak-ticker">
+            Ticker strip
+            <small>Under masthead</small>
+        </label>
+        <button id="tweak-ticker" class="tweaks-panel__switch" role="switch" aria-checked="false" aria-labelledby="tweak-ticker-label" data-anim="ticker"></button>
+    </div>
+
+    <div class="tweaks-panel__row">
+        <label id="tweak-toc-label" class="tweaks-panel__label" for="tweak-toc">
+            TOC stagger
+            <small>In-this-issue fade</small>
+        </label>
+        <button id="tweak-toc" class="tweaks-panel__switch" role="switch" aria-checked="false" aria-labelledby="tweak-toc-label" data-anim="toc"></button>
+    </div>
+
+    <button id="tweak-replay" class="tweaks-panel__replay" type="button">↻ Replay animations</button>
+</aside>
+
+<script>
+    /* =========================================================
+       Tweaks defaults — persistable via edit-mode protocol.
+       All four animations default OFF per brief.
+       ========================================================= */
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "animLetter": false,
+      "animTypewriter": false,
+      "animTicker": false,
+      "animToc": false
+    }/*EDITMODE-END*/;
+
+    (function () {
+        var body = document.body;
+
+        /* ---------- Split masthead into per-letter spans ---------- */
+        var word = document.querySelector('.cover__masthead-word');
+        if (word) {
+            var text = word.textContent.trim();
+            word.innerHTML = '';
+            for (var i = 0; i < text.length; i++) {
+                var span = document.createElement('span');
+                span.className = 'ch';
+                span.style.setProperty('--i', i);
+                if (text[i] === ' ') {
+                    span.classList.add('ch--space');
+                    span.innerHTML = '&nbsp;';
+                } else {
+                    span.textContent = text[i];
+                }
+                word.appendChild(span);
+            }
+        }
+
+        /* ---------- Per-animation state ---------- */
+        var ANIMS = [
+            { key: 'letter',     cls: 'anim-letter',     storage: 'avia-anim-letter',     defaultKey: 'animLetter' },
+            { key: 'typewriter', cls: 'anim-typewriter', storage: 'avia-anim-typewriter', defaultKey: 'animTypewriter' },
+            { key: 'ticker',     cls: 'anim-ticker',     storage: 'avia-anim-ticker',     defaultKey: 'animTicker' },
+            { key: 'toc',        cls: 'anim-toc',        storage: 'avia-anim-toc',        defaultKey: 'animToc' }
+        ];
+
+        function getState(anim) {
+            try {
+                var v = localStorage.getItem(anim.storage);
+                if (v === null) return !!TWEAK_DEFAULTS[anim.defaultKey];
+                return v === 'true';
+            } catch (e) { return !!TWEAK_DEFAULTS[anim.defaultKey]; }
+        }
+
+        function setState(anim, on, persist) {
+            if (on) body.classList.add(anim.cls);
+            else    body.classList.remove(anim.cls);
+
+            var btn = document.querySelector('[data-anim="' + anim.key + '"]');
+            if (btn) btn.setAttribute('aria-checked', on ? 'true' : 'false');
+
+            if (persist) {
+                try { localStorage.setItem(anim.storage, on ? 'true' : 'false'); } catch (e) {}
+                var edits = {};
+                edits[anim.defaultKey] = !!on;
+                try {
+                    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: edits }, '*');
+                } catch (e) {}
+            }
+        }
+
+        // Apply initial states (before cover-ready goes on).
+        ANIMS.forEach(function (anim) {
+            setState(anim, getState(anim), false);
+        });
+
+        /* ---------- Play / replay ---------- */
+        function play() {
+            body.classList.remove('cover-ready');
+            void body.offsetWidth; // force reflow so animations restart
+            body.classList.add('cover-ready');
+        }
+
+        requestAnimationFrame(play);
+
+        /* ---------- Wire up switches ---------- */
+        ANIMS.forEach(function (anim) {
+            var btn = document.querySelector('[data-anim="' + anim.key + '"]');
+            if (!btn) return;
+            btn.addEventListener('click', function () {
+                var nowOn = btn.getAttribute('aria-checked') !== 'true';
+                setState(anim, nowOn, true);
+                // Replay so the newly-enabled animation actually runs.
+                play();
+            });
+        });
+
+        var replayBtn = document.getElementById('tweak-replay');
+        if (replayBtn) replayBtn.addEventListener('click', play);
+
+        /* ---------- Custom eased scroll on cover cue ---------- */
+        var cue = document.querySelector('.cover__scroll-cue');
+        if (cue) {
+            cue.addEventListener('click', function (e) {
+                var href = cue.getAttribute('href') || '';
+                if (!href.startsWith('#')) return;
+                var target = document.querySelector(href);
+                if (!target) return;
+
+                // Respect reduced-motion
+                var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (reduce) return; // let the browser do an instant jump
+
+                e.preventDefault();
+
+                var startY = window.scrollY;
+                var targetY = target.getBoundingClientRect().top + startY - 24; // match scroll-margin
+                var distance = targetY - startY;
+                var duration = 1100; // ms — slower, more editorial than default
+                var t0 = null;
+
+                function easeInOutCubic(t) {
+                    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                }
+
+                function step(ts) {
+                    if (t0 === null) t0 = ts;
+                    var elapsed = ts - t0;
+                    var t = Math.min(elapsed / duration, 1);
+                    window.scrollTo(0, startY + distance * easeInOutCubic(t));
+                    if (t < 1) requestAnimationFrame(step);
+                    else history.replaceState(null, '', href);
+                }
+                requestAnimationFrame(step);
+            });
+        }
+
+        /* ---------- Edit-mode host protocol ---------- */
+        // 1) Register listener FIRST
+        window.addEventListener('message', function (event) {
+            var data = event && event.data;
+            if (!data || typeof data !== 'object') return;
+            if (data.type === '__activate_edit_mode') {
+                body.classList.add('tweaks-open');
+            } else if (data.type === '__deactivate_edit_mode') {
+                body.classList.remove('tweaks-open');
+            }
+        });
+
+        // 2) THEN announce availability
+        try {
+            window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+        } catch (e) {}
+    })();
+</script>
+
+</body>
+</html>

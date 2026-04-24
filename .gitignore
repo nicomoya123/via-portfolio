@@ -1,0 +1,17 @@
+# Design handoff bundle — kept local, not shipped
+_handoff/
+Avia Protfolio-handoff.tar.gz
+whatsapp.txt
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Build output (none today; future-proofing)
+node_modules/
+dist/
+.cache/

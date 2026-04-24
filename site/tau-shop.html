@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avia — The TAU Shop</title>
+    <meta name="description" content="Avia on building the TAU Official Store from zero — vendors, design, dev, launch, and the system that produced TAU X GELADA.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&amp;family=Inter:wght@500&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=18">
+    <style>
+        /* Product proof grid — 4 across on desktop, square thumbs */
+        .product-proof {
+            margin: 32px 0 24px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 16px;
+            padding: 0;
+            list-style: none;
+        }
+        @media (min-width: 640px) {
+            .product-proof { grid-template-columns: repeat(4, 1fr); }
+        }
+        .product-proof__card { margin: 0; display: flex; flex-direction: column; }
+        .product-proof__thumb {
+            aspect-ratio: 1 / 1;
+            background: var(--cream-tint);
+            border: 1px solid var(--rule);
+            display: block;
+            overflow: hidden;
+        }
+        .product-proof__thumb img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+        .product-proof__name {
+            font-family: var(--label);
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-80);
+            margin: 10px 0 0;
+            line-height: 1.3;
+        }
+        .product-proof__price {
+            font-family: var(--serif-body);
+            font-size: 13px;
+            color: var(--ink-60);
+            margin: 2px 0 0;
+        }
+
+        /* Lifestyle asset — full width image block */
+        .lifestyle-figure--hero {
+            margin: 24px auto 20px;
+            max-width: 640px;
+        }
+        .product-proof--hero {
+            margin: 0 0 32px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .lifestyle-figure {
+            margin: 40px 0;
+        }
+        .lifestyle-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--rule);
+        }
+
+        /* LinkedIn launch-post card — styled pull-block */
+        .launch-post {
+            margin: 40px 0;
+            border: 1px solid var(--rule);
+            background: var(--cream-tint);
+            padding: 28px 28px 24px;
+        }
+        .launch-post__meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--label);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-60);
+            margin: 0 0 14px;
+        }
+        .launch-post__meta strong {
+            color: var(--ink-80);
+            font-weight: 500;
+        }
+        .launch-post__body {
+            font-family: var(--serif-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--ink-80);
+            margin: 0;
+        }
+        .launch-post__body em {
+            color: var(--ink-60);
+        }
+        .launch-post__tail {
+            margin: 16px 0 0;
+            font-family: var(--label);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-60);
+        }
+        .launch-post__tail a { color: var(--rust); }
+
+        /* Screenshot variant — let the image breathe, strip the box chrome */
+        .launch-post--screenshot {
+            padding: 0;
+            background: transparent;
+            border: 1px solid var(--rule);
+            margin: 40px auto;
+            max-width: 440px;
+        }
+        .launch-post--screenshot > a {
+            display: block;
+            line-height: 0;
+        }
+        .launch-post--screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .launch-post--screenshot .launch-post__tail {
+            margin: 0;
+            padding: 12px 16px;
+            border-top: 1px solid var(--rule);
+            background: var(--cream-tint);
+        }
+    </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to contents</a>
+
+<header class="masthead" role="banner">
+    <div class="masthead__brand"><a href="index.html">Avia Ben Uriah</a></div>
+    <div class="masthead__meta">Issue 28 · Spring 2026</div>
+</header>
+
+<main class="page" id="main">
+
+<article class="article feature" id="tau-shop">
+
+    <p class="label label--rust feature__kicker">Feature No. 02 — Brand &amp; Commerce</p>
+
+    <h1 class="feature__headline">Building a shop from scratch</h1>
+
+    <p class="deck">The Official Tel Aviv University e-commerce website.</p>
+
+    <p class="label label--muted feature__byline">
+        Founding operator <span class="colophon__sep">·</span> TAU Marketing <span class="colophon__sep">·</span> 2024–2025
+    </p>
+
+    <dl class="credit-strip" aria-label="Credits">
+        <div>
+            <dt class="credit-strip__term">Role</dt>
+            <dd class="credit-strip__desc"><strong>Founding operator.</strong> Brand call, vendor sourcing, design-team PM, dev-agency coordination, logistics, launch &amp; social.</dd>
+        </div>
+        <div>
+            <dt class="credit-strip__term">Scope</dt>
+            <dd class="credit-strip__desc">Positioning, vendor sourcing, design-team PM, dev-agency coordination, shipping pipeline, launch campaign, and post-launch social across Facebook, LinkedIn &amp; Instagram.</dd>
+        </div>
+        <div>
+            <dt class="credit-strip__term">Live at</dt>
+            <dd class="credit-strip__desc"><a href="https://shop.tau.ac.il/">shop.tau.ac.il</a></dd>
+        </div>
+    </dl>
+
+    <figure class="lifestyle-figure lifestyle-figure--hero">
+        <img src="https://shop.tau.ac.il/cdn/shop/files/Untitled_design_-_2025-01-23T104932.609.jpg?v=1737622200&amp;width=1500" alt="TAU X GELADA campaign image — students in Tel Aviv street style wearing the collection" loading="lazy">
+    </figure>
+
+    <p class="dropcap">I never thought I’d end up managing a shop in my position, but that’s exactly what shows you how far creativity in marketing can carry you. When I started working at TAU, our team had a vision: every university they looked up to had a proper shop, and we didn’t. They thought I was the person to handle it: manage the project, build the website, develop products and introduce it to the world. I’d never worked in e-commerce before, never sat across from a development agency, never stood on a factory floor watching a first sample come off the press. I was happy to take it on. Then first thing I wanted to figure out was the why: <em>what would it mean to have a shop that actually feels like TAU?</em> I had an answer.</p>
+
+    <p>Tel Aviv University has a distinct voice, and making the shop feel truly TAU meant understanding every audience it speaks to — students on campus, alumni who left twenty years ago, donors and partners watching from abroad. My brief to myself, after looking at every other Israeli university shop, was one line: <em>not your regular merch store.</em> TAU is elevated and it’s Tel Avivian, and the shop had to feel like both.</p>
+
+    <p class="label label--rust" style="margin-top:40px;">Not your regular merch store</p>
+
+    <p>I planned the shop, project-managed the design team on identity and naming, briefed the vendors, sat across from the Shopify dev agency, went to the factory to see the first shirts come off the press, wrote the launch plan, and guided the content team on the reels and posts that introduced it. The shop is my baby. What mattered, through all of it, was the one line: every decision had to defend itself against <em>not your regular merch store</em>, or it didn’t ship.</p>
+
+    <p>At first, we split the store into two collections. <strong>Essentials</strong> — the hoodie, tote, mug, laptop case — for the audience that wants a well-made version of the familiar thing. And <strong>TAU X GELADA</strong>, a collaboration with the Tel Avivian art studio: a capsule of t-shirts named after places on and around campus — Yarkon, HaBima, Gordon Beach, Sourasky. The logic was editorial, not commercial. A student buying a Gordon Beach tee isn’t buying a souvenir of their university; they’re buying a piece of the neighbourhood the university lives in. After launch, we got messages comparing the shop to Harvard, NYU, the Ivy League stores — which is exactly the bar I set for myself, and I’m proud we hit it.</p>
+
+    <p class="label label--rust" style="margin-top:40px;">TAU X GELADA</p>
+
+    <ol class="product-proof" aria-label="The TAU X GELADA capsule">
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/yarkon-tshirt">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/yellow_a3fcd3d8-ea34-4b13-86c1-89a64ae43aa3.jpg?v=1737620592&amp;width=800" alt="Yarkon T-Shirt — yellow, TAU X GELADA collection" loading="lazy">
+                </div>
+                <p class="product-proof__name">Yarkon T-Shirt</p>
+                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
+            </a>
+        </li>
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/gordon-tshirt">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/green_bab8553e-ce56-42b9-9483-c6907e308ead.jpg?v=1737621365&amp;width=800" alt="Gordon Beach T-Shirt — green, TAU X GELADA collection" loading="lazy">
+                </div>
+                <p class="product-proof__name">Gordon Beach Tee</p>
+                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
+            </a>
+        </li>
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/hamiba-tshirt">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/pink_d52fed63-d6b9-4bcd-8654-c78490b2cfe6.jpg?v=1737621277&amp;width=800" alt="HaBima T-Shirt — pink, TAU X GELADA collection" loading="lazy">
+                </div>
+                <p class="product-proof__name">HaBima Tee</p>
+                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
+            </a>
+        </li>
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/souraski-tshirt">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/blue.jpg?v=1737621426&amp;width=800" alt="Sourasky T-Shirt — blue, TAU X GELADA collection" loading="lazy">
+                </div>
+                <p class="product-proof__name">Sourasky Tee</p>
+                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
+            </a>
+        </li>
+    </ol>
+
+    <p class="label label--rust" style="margin-top:48px;">The essentials</p>
+
+    <ol class="product-proof" aria-label="Essentials from the TAU Official Store">
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/tau-gray-hoodie">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/eb72bd433778f632e3e4c3d3bfe2a999.jpg?v=1738227152&amp;width=800" alt="TAU Hoodie, grey" loading="lazy">
+                </div>
+                <p class="product-proof__name">TAU Hoodie (Grey)</p>
+                <p class="product-proof__price">Essentials · 105 NIS</p>
+            </a>
+        </li>
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/the-tote">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/061A1529_1_1.jpg?v=1737272996&amp;width=800" alt="TAU Tote bag" loading="lazy">
+                </div>
+                <p class="product-proof__name">TAU Tote</p>
+                <p class="product-proof__price">Essentials · 35 NIS</p>
+            </a>
+        </li>
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/the-mug">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/2_7f2db1a7-f2dc-4985-a00f-419e84e77ca7.jpg?v=1737273508&amp;width=800" alt="TAU Mug" loading="lazy">
+                </div>
+                <p class="product-proof__name">TAU Mug</p>
+                <p class="product-proof__price">Essentials · 65 NIS</p>
+            </a>
+        </li>
+        <li class="product-proof__card">
+            <a href="https://shop.tau.ac.il/products/the-laptop-case">
+                <div class="product-proof__thumb">
+                    <img src="https://shop.tau.ac.il/cdn/shop/files/laptop_case_2.0.jpg?v=1736687228&amp;width=800" alt="TAU Laptop Case" loading="lazy">
+                </div>
+                <p class="product-proof__name">The Laptop Case</p>
+                <p class="product-proof__price">Essentials · 75 NIS</p>
+            </a>
+        </li>
+    </ol>
+
+    <p class="video-proof-tail">Explore more at the shop → <a href="https://shop.tau.ac.il/">shop.tau.ac.il</a></p>
+
+    <!-- TODO(avia): pullquote copy — currently uses an extracted line from the body; swap for the final quote when you pick one. -->
+    <blockquote class="pullquote">We got messages comparing the shop to Harvard, NYU, the Ivy League — exactly the bar I set for myself.</blockquote>
+
+    <p>After launch: <strong>dozens of orders in the first week and a half.</strong> We started, as we say in Hebrew, on the right foot — students got product, alumni got nostalgia, partners and donors got the brand story, and every surface spoke in the same voice. A shop that speaks to one audience well is a merch store. A shop that speaks to three in the same voice is a brand.</p>
+
+    <figure class="launch-post launch-post--screenshot" aria-label="Tel Aviv University launch post on LinkedIn">
+        <a href="https://www.linkedin.com/posts/tel-aviv-university-is-proud-to-launch-its-ugcPost-7309917526749073410-yxo_/" target="_blank" rel="noopener">
+            <img src="assets/tau-shop-launch-post.png" alt="Tel Aviv University's LinkedIn post announcing the launch of the TAU Shop, featuring the Gelada collection and a Tel Aviv–style campaign photo" loading="lazy">
+        </a>
+        <figcaption class="launch-post__tail">Tel Aviv University on LinkedIn <span class="colophon__sep">·</span> launch day <span class="colophon__sep">·</span> <a href="https://www.linkedin.com/posts/tel-aviv-university-is-proud-to-launch-its-ugcPost-7309917526749073410-yxo_/" target="_blank" rel="noopener">view post →</a></figcaption>
+    </figure>
+
+    <aside class="taught" aria-labelledby="taught-label">
+        <p id="taught-label" class="taught__label">New skills developed</p>
+        <p class="taught__text">TAU Shop taught me everything I didn’t know I’d need — branding, project management, user experience, working with developers and printers, writing briefs that non-writers can read. Above all, it taught me how to take something that begins as an idea and walk it through every stage until it becomes a functioning, successful system. That’s not five jobs; it’s one: the role a small team actually needs, someone who can hold the whole arc in their head and still be the one who ships it. I discovered I enjoy this kind of work far more than I expected to, and it changed the way I think about my own practice. The shop isn’t just a shop for me — it’s a real product I helped build, one that carries an emotional connection between a university and the community around it. And, honestly, it’s only the beginning.</p>
+    </aside>
+
+    <p class="ornament" aria-hidden="true">· · ·</p>
+
+    <div class="next-feature">
+        <span class="label next-feature__label">Next feature</span>
+        <a class="next-feature__link" href="impact-arena.html">The Impact Arena →</a>
+    </div>
+
+    <p class="back-to-contents"><a href="index.html">← Back to contents</a></p>
+</article>
+
+</main>
+
+<footer class="colophon" role="contentinfo">
+    <div class="colophon__inner">
+        <div class="colophon__col colophon__col--left">
+            Avia <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2026
+        </div>
+        <div class="colophon__col colophon__col--center">
+            <a href="mailto:via247@gmail.com">via247@gmail.com</a>
+            <span class="colophon__sep">·</span>
+            <a href="https://www.linkedin.com/in/avia-ben-uriah-78066715b/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="colophon__col colophon__col--right">
+            <a href="#" aria-disabled="true" title="CV coming soon">Download CV — PDF</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
