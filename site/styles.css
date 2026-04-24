@@ -1551,17 +1551,12 @@ body.cover-page.anim-toc.cover-ready .toc__item {
 .reel-card {
     scroll-snap-align: start;
     display: flex;
-}
-.reel-card__link {
-    display: flex;
     flex-direction: column;
     width: 100%;
-    text-decoration: none;
-    color: inherit;
     background: transparent;
     transition: transform 0.2s ease;
 }
-.reel-card__link:hover { transform: translateY(-2px); }
+.reel-card:hover { transform: translateY(-2px); }
 
 .reel-card__thumb {
     position: relative;
@@ -1586,6 +1581,16 @@ body.cover-page.anim-toc.cover-ready .toc__item {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+}
+.reel-card__embed,
+.reel-card__embed.instagram-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 0 12px !important;
+    background: var(--ink);
+    border-radius: 2px;
+    min-height: 540px;
 }
 .reel-card__thumb--filled {
     background-image: none;
@@ -1632,8 +1637,9 @@ body.cover-page.anim-toc.cover-ready .toc__item {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--rust, #b55a3a);
+    text-decoration: none;
 }
-.reel-card__link:hover .reel-card__watch {
+.reel-card:hover .reel-card__watch {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
