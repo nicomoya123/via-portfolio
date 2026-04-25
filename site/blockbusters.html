@@ -4,61 +4,123 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Avia — Blockbusters, the Podcast</title>
-    <meta name="description" content="Avia on building Blockbusters — a Web3 PR podcast for MarketAcross. How the show was designed, produced and shipped.">
+    <meta name="description" content="Blockbusters — a Web3 PR podcast I built from zero: format, brand, production, copy and page. MarketAcross, 2024–2026.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Inter:wght@500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css?v=18">
+    <link rel="stylesheet" href="styles.css?v=29">
     <style>
-        /* Variant switch — show only the active variant */
-        body[data-variant="a"] #variant-b,
-        body[data-variant="b"] #variant-a { display: none; }
+        /* Cover hero — mirrors the TAU Shop lifestyle figure treatment */
+        .cover-hero {
+            margin: 24px auto 20px;
+            max-width: 640px;
+        }
+        .cover-hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--rule);
+        }
+        .cover-hero figcaption {
+            font-family: var(--label);
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-60);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Bumped-up "What I took away" — a proper closing statement */
+        article .taught {
+            margin: 72px 0 40px;
+            padding: 40px clamp(24px, 4vw, 48px);
+            border-top: 3px solid var(--rust);
+            border-bottom: 1px solid var(--rule);
+            background: var(--cream-tint);
+        }
+        article .taught__label {
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+        article .taught__text {
+            font-family: var(--serif);
+            font-size: clamp(22px, 2.4vw, 28px);
+            line-height: 1.4;
+            font-weight: 400;
+            letter-spacing: -0.005em;
+        }
+
+        /* YouTube Shorts grid — vertical 9:16 iframe per short */
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 16px 0 24px;
+        }
+        @media (min-width: 720px) {
+            .shorts-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+        }
+        .short { margin: 0; }
+        .short__embed {
+            position: relative;
+            padding-bottom: 177.78%;
+            height: 0;
+            overflow: hidden;
+            border: 1px solid var(--rule);
+            background: #000;
+        }
+        .short__embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .short figcaption {
+            font-family: var(--label);
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-60);
+            margin-top: 8px;
+            line-height: 1.4;
+            text-wrap: balance;
+        }
     </style>
 </head>
-<body data-variant="a">
+<body>
 
 <a class="skip-link" href="#main">Skip to contents</a>
 
 <header class="masthead" role="banner">
-    <div class="masthead__brand"><a href="index.html">Avia</a></div>
+    <div class="masthead__brand"><a href="index.html">Avia Ben Uriah</a></div>
     <div class="masthead__meta">Issue 28 · Spring 2026</div>
 </header>
 
-<nav class="ab-strip" aria-label="Blockbusters page variants">
-    <span class="ab-strip__label">Variants</span>
-    <div class="ab-strip__links">
-        <a href="#a" data-variant="a" aria-current="page">A · The Show</a>
-        <a href="#b" data-variant="b">B · How I Built It</a>
-    </div>
-</nav>
-
 <main class="page" id="main">
 
-<!-- =============================================================
-     VARIANT A — "The Show"  (show-forward: listen, episode index)
-     ============================================================= -->
-<article class="article feature" id="variant-a">
+<article class="article feature" id="blockbusters">
 
     <p class="label label--rust feature__kicker">Feature No. 03 — Podcasting</p>
 
-    <h1 class="feature__headline">Blockbusters</h1>
+    <h1 class="feature__headline">Building Blockbusters</h1>
 
-    <p class="deck">The Web3 PR podcast decoding the playbooks behind the industry's biggest stories — and the page you're reading them on.</p>
+    <p class="deck">A branded Web3 podcast covering blockchain, crypto marketing, and the future of decentralized tech.</p>
 
-    <p class="label label--muted feature__byline">
-        By Avia <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2025 – 2026
-    </p>
+    <p class="label label--muted feature__byline">producer &amp; Content manager&nbsp;<span class="colophon__sep">·</span> MarketAcross <span class="colophon__sep">·</span> 2025–2026</p>
 
     <dl class="credit-strip" aria-label="Credits">
         <div>
             <dt class="credit-strip__term">Role</dt>
-            <dd class="credit-strip__desc"><strong>Writer &amp; page designer.</strong> Production handled by the MarketAcross team.</dd>
+            <dd class="credit-strip__desc"><strong>Founding producer.</strong> Owned the show end to end, focusing on format, page building and distribution.</dd>
         </div>
         <div>
             <dt class="credit-strip__term">Scope</dt>
-            <dd class="credit-strip__desc">Show positioning, episode titles &amp; decks, guest briefs, and the podcast page on marketacross.com.</dd>
+            <dd class="credit-strip__desc">Format design, guest briefing, Riverside production, editing direction, copy across every surface, landing page, graphics direction, publishing schedule.</dd>
+        </div>
+        <div>
+            <dt class="credit-strip__term">Words</dt>
+            <dd class="credit-strip__desc">All page copy, episode descriptions, CTAs and brand voice for the show.</dd>
         </div>
         <div>
             <dt class="credit-strip__term">Live at</dt>
@@ -66,43 +128,82 @@
         </div>
     </dl>
 
-    <p class="dropcap">Blockbusters is a Web3 PR podcast, and both halves of that phrase usually kill a show on arrival. PR is suspect; Web3 is tired; put them together and most people reach for the skip button. I wrote around that problem. The positioning line — "decoding the playbooks behind the industry's biggest stories" — doesn't promise news. It promises method: how the story got made, who called whom, what the press release left out. That's a promise a journalist, a founder, and a marketer can all accept.</p>
-    <p>Once the positioning held, the rest of the editorial system fell into place. Episode titles are written like magazine decks, not podcast titles: <em>Meat, Potatoes &amp; Press Releases</em>, <em>The Gravity of Growth</em>, <em>The Decentralization Wake-Up Call</em>. Each one names a tension rather than a topic, so the listener knows what argument they've signed up for before the intro ends. The show notes carry the same weight as the cover art — I treat them as the first thirty seconds of the episode, read silently, on a phone, by someone who is deciding whether to press play.</p>
-    <p>The page you're looking at is part of the same editorial system. The hero is the tagline, not a stock photo of a microphone. The episode index reads like a contents page because that's what a contents page is for. The guest wall is there to let the roster speak without a quote block telling you how to feel about it. Every design decision — the hairline rules, the rust accents, the small-caps platform links — was a copy decision first. I wrote the page the way I'd write a brief, and then set it in type.</p>
-
-    <blockquote class="pullquote">A podcast page isn't a list of episodes. It's a contract with the listener: here's what we think is worth your attention, and here's how we'll spend it.</blockquote>
-
-    <p class="label label--muted" style="margin-top:40px;">Listen</p>
-    <ul class="listen-row" aria-label="Where to listen">
-        <li><a href="https://open.spotify.com/show/3GVPJD6lUDIBPm0XqPXfIa">Spotify</a></li>
-        <li><a href="https://www.youtube.com/@Market_Across">YouTube</a></li>
-        <li><a href="https://podcasts.apple.com/us/podcast/blockbusters/id1616389831">Apple Podcasts</a></li>
-    </ul>
-
-    <hr class="rule rule--loose">
-    <p class="label label--rust">Featured episode</p>
-    <h2 class="essay-card__title" style="margin-top:8px;"><a href="https://marketacross.com/podcast/meat-potatoes-press-releases-behind-the-pr-journalism-dynamic-in-web3/">Meat, Potatoes &amp; Press Releases</a></h2>
-    <p class="deck" style="margin-top:12px;">Behind every Web3 headline is a messy dance between PR and journalists — a sharp, funny look at how stories get made, and how they fall apart.</p>
-    <p class="label label--muted" style="margin-top:14px;">
-        EP 03 <span class="colophon__sep">·</span>
-        December 1, 2025 <span class="colophon__sep">·</span>
-        With Liam J. Kelly, DeFi Correspondent at DLNews
-    </p>
-
-    <figure class="figure">
-        <div class="figure__embed figure__embed--video" role="img" aria-label="Meat, Potatoes &amp; Press Releases — episode video">
-            <iframe width="100%" height="100%" style="border:0;aspect-ratio:16/9;" src="https://www.youtube.com/embed/7O7Su7pZDM8" title="Meat, Potatoes &amp; Press Releases" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <figure class="cover-hero">
+        <div class="figure__embed figure__embed--video" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/DML6T7Y_t-s?si=3n4lv-bH5lPmsaHN" title="Blockbusters — The Cost of Control in the Age of AI Agents, with Michael Casey and Tricia Wang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
         </div>
-        <figcaption class="figure__caption">Episode 03 · with Liam J. Kelly · Dec 2025</figcaption>
+        <figcaption>Blockbusters — ep. 05, with Casey &amp; Wang, Advanced AI Society</figcaption>
     </figure>
 
-    <p>The pitch to Liam Kelly at DLNews was a one-page angle doc, not a booking request. The question underneath the question was: would a working journalist go on a PR firm's podcast and say, on the record, how the press release actually moves through the newsroom? I wrote the angle around a promise — no gotchas, no defensiveness, both chairs kept honest — and built the run-of-show to protect it. The episode title came before the recording. Naming it <em>Meat, Potatoes &amp; Press Releases</em> told Liam what kind of conversation he was agreeing to, and told the eventual listener the same thing. By the time the mics were on, the hard editorial work was already done.</p>
-    <p>Every episode below was built the same way. A pitch that names the tension a guest is privately wrestling with, a title that promises a specific argument, a question we ask that the guest has never been asked in quite those words, and a closing line we choose before we write the show notes. <em>The Gravity of Growth</em> started from "what actually pulls a crypto project into orbit, and what's just PR." <em>The Decentralization Wake-Up Call</em> started from "when does trustless still need trust." The method is visible in the titles; the work is everything that sits under them.</p>
+    <p class="dropcap">MarketAcross is one of Web3's largest PR agencies, including end-to-end marketing for blockchain companies, with 300+ clients across the industry's biggest names. The firm had spent years building the relationships, the experience and the track record. What it didn't have was a platform of its own.</p>
 
-    <hr class="rule rule--loose">
-    <p class="label label--rust">The full run · Five episodes</p>
+    <p>One of those goals was a podcast: a way to host the conversations the brand was already part of, in a format the company owned and could grow inside. The brief started with my hiring: goals, format and production were mine to shape.</p>
+
+    <p>I shaped the show around the audience that mattered to the brand: founders, CMOs and operators inside the industry, plus the journalists covering them. Then I worked on the voice. Confident without being loud. An expert POV from a team that had lived through more than one cycle and knew how to survive each. A show about PR, marketing and growth in Web3, not delivered in a PR tone.</p>
+
+    <hr class="rule rule--loose" style="margin-top:36px;">
+    <p class="label label--rust" style="margin-top:0;">Shorts</p>
+
+    <div class="shorts-grid" aria-label="Blockbusters shorts on YouTube">
+        <figure class="short">
+            <div class="short__embed">
+                <iframe src="https://www.youtube.com/embed/2hAUELfS4ko" title="Short — The Cost of Control in the Age of AI Agents" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <figcaption>The Cost of Control — Casey &amp; Wang</figcaption>
+        </figure>
+        <figure class="short">
+            <div class="short__embed">
+                <iframe src="https://www.youtube.com/embed/qLwXTCULdsU" title="Short — Meat, Potatoes &amp; Press Releases" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <figcaption>Meat, Potatoes &amp; Press Releases — Liam J. Kelly</figcaption>
+        </figure>
+        <figure class="short">
+            <div class="short__embed">
+                <iframe src="https://www.youtube.com/embed/NL7Y1ujE3XU" title="Short — Game On: Turning Fans into Stakeholders" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <figcaption>Game On — Tom Mizzone, Sweet</figcaption>
+        </figure>
+        <figure class="short">
+            <div class="short__embed">
+                <iframe src="https://www.youtube.com/embed/IQuFvpRDSkg" title="Short — The Decentralization Wake-Up Call" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <figcaption>The Decentralization Wake-Up Call — Charles d’Haussy</figcaption>
+        </figure>
+    </div>
+
+    <p class="label label--rust" style="margin-top:40px;">From zero to on-air</p>
+
+    <p>The format: a long-form discussion show, 30–40 minutes per episode. Produced on Riverside, published on YouTube from day one, wrapped in a cover system that read as Web3 and tech rather than agency PR. I wrote the briefs and directed the edit on tone and pacing.</p>
+
+    <p>Once a few episodes were running, the show needed a home that matched its standard — a curated space where the catalogue could live, and a way to position Blockbusters as a legitimate podcast series, not a side experiment. I researched the references, briefed the design team and led the page through. The landing page became the brand in its quietest form. Every design decision was a copy decision first — and the show, the page and the audio all held to one voice.</p>
+
+    <p class="video-proof-tail" style="margin-top:20px;">Visit the show → <a href="https://marketacross.com/podcast/">marketacross.com/podcast</a></p>
+
+    <p class="label label--rust" style="margin-top:48px;">What the brand gained</p>
+
+    <p>A new owned surface, in a new format. A YouTube channel, an episode index and a landing page where there had been none — three properties the company could keep filling, indefinitely, in its own voice.</p>
+
+    <p>Distribution through the guests. Founders, CMOs and journalists shared their episodes on Twitter and LinkedIn. Every release put the MarketAcross name in front of audiences our clients had spent years building.</p>
+
+    <p>A platform that kept running. I left a format guide, brief templates, a guest pipeline and a visual system. The show kept producing after I left, on the system I’d proudly built.</p>
+
+    <hr class="rule rule--loose" style="margin-top:36px;">
+    <p class="label label--rust">Featured episodes</p>
 
     <ol class="episode-index" aria-label="Episode index">
+        <li class="episode">
+            <span class="episode__num">06</span>
+            <div class="episode__body">
+                <h3 class="episode__title"><a href="https://marketacross.com/podcast/what-the-hack/">What the Hack? Crypto’s Trust Issues</a></h3>
+                <p class="episode__deck">Mikhail Yorgenjeev and Itai Elizur on decentralization vs. protection, proof of reserves, and what it takes for on-chain assets to feel as reliable as traditional finance.</p>
+                <p class="episode__meta">With Yorgenjeev, CertiK &amp; Elizur, MarketAcross <span class="sep">·</span> 2026</p>
+            </div>
+            <p class="episode__links">
+                <a href="https://open.spotify.com/episode/65AwExhvdl1bjbrFoCHgAd">Spotify</a>
+                <a href="https://www.youtube.com/watch?v=P4AvDKbvPiU">YouTube</a>
+                <a href="https://podcasts.apple.com/il/podcast/what-the-hack-cryptos-trust-issue/id1616389831?i=1000747012718">Apple</a>
+            </p>
+        </li>
         <li class="episode">
             <span class="episode__num">05</span>
             <div class="episode__body">
@@ -158,9 +259,9 @@
         <li class="episode">
             <span class="episode__num">01</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/inside-dydxs-journey/">The Decentralization Wake-Up Call: Inside dYdX's Journey</a></h3>
-                <p class="episode__deck">Charles d'Haussy on the paradox of trust in crypto and how dYdX is shaping the future of decentralized trading.</p>
-                <p class="episode__meta">With Charles d'Haussy, dYdX Foundation <span class="sep">·</span> November 4, 2025</p>
+                <h3 class="episode__title"><a href="https://marketacross.com/podcast/inside-dydxs-journey/">The Decentralization Wake-Up Call: Inside dYdX’s Journey</a></h3>
+                <p class="episode__deck">Charles d’Haussy on the paradox of trust in crypto and how dYdX is shaping the future of decentralized trading.</p>
+                <p class="episode__meta">With Charles d’Haussy, dYdX Foundation <span class="sep">·</span> November 4, 2025</p>
             </div>
             <p class="episode__links">
                 <a href="https://open.spotify.com/episode/4DjRC5Rien0Ds5uFF2aEyp">Spotify</a>
@@ -170,71 +271,17 @@
         </li>
     </ol>
 
-    <p>Every episode on this page was positioned, titled, and written by the same person who designed the page itself. If that's the shape of work you're hiring for, the contact line is at the bottom of every page in this issue.</p>
-
-    <p class="ornament" aria-hidden="true">· · ·</p>
-
-    <div class="next-feature">
-        <span class="label next-feature__label">Next feature</span>
-        <a class="next-feature__link" href="essays.html">Four Essays →</a>
-    </div>
-
-    <p class="back-to-contents"><a href="index.html">← Back to contents</a></p>
-</article>
-
-<!-- =============================================================
-     VARIANT B — "How I Built It"  (behind-the-scenes editorial)
-     ============================================================= -->
-<article class="article feature" id="variant-b">
-
-    <p class="label label--rust feature__kicker">Feature No. 03 — Podcasting</p>
-
-    <h1 class="feature__headline">Building Blockbusters</h1>
-
-    <p class="deck">On the harder thing: making Web3 B2B listenable.</p>
-
-    <p class="label label--muted feature__byline">
-        By Avia <span class="colophon__sep">·</span> Producer &amp; Writer <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2024 – 2026
-    </p>
-
-    <hr class="rule rule--loose">
-
-    <p class="dropcap">Most Web3 B2B podcasts sound like a quarterly earnings call held inside a server rack. Men in headphones trading acronyms, a logo loop, a link in the bio. I started Blockbusters because I thought the story behind the story — the PR calls, the journalist fights, the product decisions no one tweets about — was the interesting part. The brief I wrote myself was one sentence: make an industry that talks in jargon sound like people talking.</p>
-
-    <p>I built the show end-to-end. Format first: conversational, two-voice, thirty to forty minutes, one guest per episode, never a panel. Then the calendar — a rolling two-month window with a warm bench of guests so we could swap when news broke. Then the production flow: intake brief, host prep doc, run-of-show, post-interview trim notes, show notes, three social cuts, a landing page. I ran it from a kitchen in Tel Aviv with a small rotating crew, and the thing I kept tightest was the writing.</p>
-
-    <p>Guest wrangling was its own job. The pitch wasn't "come on our podcast" — it was a one-page angle doc that told a CEO what story we thought they were sitting on and why only they could tell it. Charles d'Haussy at dYdX came in to talk about the paradox of trust in a trustless system. Tom Mizzone at Sweet came in to talk about fandom as ownership. Liam Kelly at DLNews came in to talk about the messy dance between PR people and journalists — which is the episode we're all secretly proud of, because a journalist agreed, on the record, to explain how the sausage gets made.</p>
-
-    <blockquote class="pullquote">Narrative isn't decoration in B2B. It's the compression algorithm — the only way a stranger remembers what you do.</blockquote>
-
-    <p>The script shape mattered more than anything else. I don't write out interviews, but I do write the architecture: a cold open that earns the next twenty minutes, three questions the audience cares about framed as one question the guest wants to answer, a turn where we ask the thing they wouldn't say in a press release, and a close that gives the listener something to do on Monday morning. Hosts got a two-page brief the night before. I sat behind the glass and passed notes.</p>
-
     <aside class="taught" aria-labelledby="taught-label">
-        <p id="taught-label" class="taught__label">What this taught me</p>
-        <p class="taught__text">Producing a podcast is really producing a position. You're deciding, every week, what a company thinks is worth saying and who it sounds like when it says it. That's the same muscle as a brand campaign, a launch narrative, or a founder's keynote — just run at twenty-six episodes a year instead of one.</p>
+        <p id="taught-label" class="taught__label">What I took from this</p>
+        <p class="taught__text">Blockbusters taught me to trust my instincts. I set the standard for the show: branding guidelines, format, design, working with editors, all to bring my vision through. By the time I left, the team was running it on its own. Creating something that lasts, that’s the biggest achievement I could ask for.</p>
     </aside>
 
-    <p>Seven episodes in, the show has a voice and a shelf — guests pitch us now instead of the other way round. I'm most proud of the line between what I wrote and what ended up in people's ears, because in audio you can hear every seam. The writing is the seam.</p>
-
-    <figure class="listen-proof" aria-labelledby="listen-proof-title">
-        <a class="listen-proof__cover" href="https://marketacross.com/podcast/" aria-label="Blockbusters podcast — all episodes">
-            <img src="https://marketacross.com/wp-content/uploads/meet-potato-1024x576.jpg" alt="Blockbusters podcast cover" loading="lazy">
-        </a>
-        <figcaption class="listen-proof__body">
-            <p class="listen-proof__show-label">The Show</p>
-            <p id="listen-proof-title" class="listen-proof__title">Blockbusters</p>
-            <p class="listen-proof__desc">The Web3 PR podcast decoding the playbooks behind the industry's biggest stories.</p>
-            <ul class="listen-proof__links">
-                <li><a href="https://open.spotify.com/show/3GVPJD6lUDIBPm0XqPXfIa">Spotify</a></li>
-                <li aria-hidden="true" class="sep">·</li>
-                <li><a href="https://podcasts.apple.com/us/podcast/blockbusters/id1616389831">Apple Podcasts</a></li>
-                <li aria-hidden="true" class="sep">·</li>
-                <li><a href="https://www.youtube.com/@Market_Across">YouTube</a></li>
-                <li aria-hidden="true" class="sep">·</li>
-                <li><a class="all" href="https://marketacross.com/podcast/">All episodes → marketacross.com/podcast</a></li>
-            </ul>
-        </figcaption>
-    </figure>
+    <p class="label label--muted" style="margin-top:40px;">Listen</p>
+    <ul class="listen-row" aria-label="Where to listen">
+        <li><a href="https://open.spotify.com/show/3GVPJD6lUDIBPm0XqPXfIa">Spotify</a></li>
+        <li><a href="https://www.youtube.com/@Market_Across">YouTube</a></li>
+        <li><a href="https://podcasts.apple.com/us/podcast/blockbusters/id1616389831">Apple Podcasts</a></li>
+    </ul>
 
     <p class="ornament" aria-hidden="true">· · ·</p>
 
@@ -251,7 +298,7 @@
 <footer class="colophon" role="contentinfo">
     <div class="colophon__inner">
         <div class="colophon__col colophon__col--left">
-            Avia <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2026
+            Avia Ben Uriah <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2026
         </div>
         <div class="colophon__col colophon__col--center">
             <a href="mailto:via247@gmail.com">via247@gmail.com</a>
@@ -259,57 +306,10 @@
             <a href="https://www.linkedin.com/in/avia-ben-uriah-78066715b/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <div class="colophon__col colophon__col--right">
-            <a href="#" aria-disabled="true" title="CV coming soon">Download CV — PDF</a>
+            <a href="about.html">About &amp; contact</a>
         </div>
     </div>
 </footer>
-
-<script>
-    // A/B variant switcher: persists in localStorage, reflects URL hash (#a / #b)
-    (function () {
-        var body = document.body;
-        var links = document.querySelectorAll('.ab-strip__links a[data-variant]');
-        var STORAGE_KEY = 'blockbusters-variant';
-
-        function setVariant(v) {
-            if (v !== 'a' && v !== 'b') v = 'a';
-            body.setAttribute('data-variant', v);
-            links.forEach(function (a) {
-                if (a.getAttribute('data-variant') === v) {
-                    a.setAttribute('aria-current', 'page');
-                } else {
-                    a.removeAttribute('aria-current');
-                }
-            });
-            try { localStorage.setItem(STORAGE_KEY, v); } catch (e) {}
-            window.scrollTo(0, 0);
-        }
-
-        // Initial state: hash > stored > default 'a'
-        var hash = (location.hash || '').replace('#', '');
-        var initial = (hash === 'a' || hash === 'b')
-            ? hash
-            : (function () {
-                try { return localStorage.getItem(STORAGE_KEY) || 'a'; }
-                catch (e) { return 'a'; }
-            })();
-        setVariant(initial);
-
-        links.forEach(function (a) {
-            a.addEventListener('click', function (e) {
-                e.preventDefault();
-                var v = a.getAttribute('data-variant');
-                history.replaceState(null, '', '#' + v);
-                setVariant(v);
-            });
-        });
-
-        window.addEventListener('hashchange', function () {
-            var h = (location.hash || '').replace('#', '');
-            if (h === 'a' || h === 'b') setVariant(h);
-        });
-    })();
-</script>
 
 </body>
 </html>
