@@ -8,6 +8,22 @@
 
 
     <link rel="stylesheet" href="styles.css?v=33">
+
+    <script>
+    (function () {
+        try {
+            var p = new URLSearchParams(window.location.search);
+            if (p.get('dev') === '1') localStorage.setItem('dev', '1');
+            if (localStorage.getItem('dev') === '1') return;
+        } catch (e) {}
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "whffmy9mnu");
+    })();
+    </script>
+
     <style>
         /* Cover hero — mirrors the TAU Shop lifestyle figure treatment */
         .cover-hero {
@@ -100,13 +116,13 @@
         </div>
         <div>
             <dt class="credit-strip__term">Live at</dt>
-            <dd class="credit-strip__desc"><a href="https://marketacross.com/podcast/">marketacross.com/podcast</a></dd>
+            <dd class="credit-strip__desc"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/">marketacross.com/podcast</a></dd>
         </div>
     </dl>
 
     <figure class="cover-hero">
-        <div class="figure__embed figure__embed--video" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-            <iframe src="https://www.youtube.com/embed/DML6T7Y_t-s?si=3n4lv-bH5lPmsaHN" title="Blockbusters — The Cost of Control in the Age of AI Agents, with Michael Casey and Tricia Wang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+        <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/DML6T7Y_t-s?si=3n4lv-bH5lPmsaHN" title="Blockbusters — The Cost of Control in the Age of AI Agents, with Michael Casey and Tricia Wang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
         <figcaption>Blockbusters — ep. 05, with Casey &amp; Wang, Advanced AI Society</figcaption>
     </figure>
@@ -117,8 +133,8 @@
 
     <p>I shaped the show around the audience that mattered to the brand: founders, CMOs and operators inside the industry, plus the journalists covering them. Then I worked on the voice. Confident without being loud. An expert POV from a team that had lived through more than one cycle and knew how to survive each. A show about PR, marketing and growth in Web3, not delivered in a PR tone.</p>
 
-    <hr class="rule rule--loose" style="margin-top:36px;">
-    <p class="label label--rust" style="margin-top:0;">Shorts · swipe to browse</p>
+    <hr class="rule rule--loose">
+    <p class="label label--rust label--flush">Shorts · swipe to browse</p>
 
     <div class="reel-carousel" role="region" aria-label="Blockbusters shorts on YouTube">
         <ol class="reel-carousel__track">
@@ -173,15 +189,15 @@
         </div>
     </div>
 
-    <p class="label label--rust" style="margin-top:40px;">From zero to on-air</p>
+    <p class="label label--rust label--section">From zero to on-air</p>
 
     <p>The format: a long-form discussion show, 30–40 minutes per episode. Produced on Riverside, published on YouTube from day one, wrapped in a cover system that read as Web3 and tech rather than agency PR. I wrote the briefs and directed the edit on tone and pacing.</p>
 
     <p>Once a few episodes were running, the show needed a home that matched its standard — a curated space where the catalogue could live, and a way to position Blockbusters as a legitimate podcast series, not a side experiment. I researched the references, briefed the design team and led the page through. The landing page became the brand in its quietest form. Every design decision was a copy decision first — and the show, the page and the audio all held to one voice.</p>
 
-    <p class="video-proof-tail" style="margin-top:20px;">Visit the show → <a href="https://marketacross.com/podcast/">marketacross.com/podcast</a></p>
+    <p class="video-proof-tail video-proof-tail--spaced">Visit the show → <a target="_blank" rel="noopener" href="https://marketacross.com/podcast/" target="_blank" rel="noopener">marketacross.com/podcast</a></p>
 
-    <p class="label label--rust" style="margin-top:48px;">What the brand gained</p>
+    <p class="label label--rust label--section">What the brand gained</p>
 
     <p>A new owned surface, in a new format. A YouTube channel, an episode index and a landing page where there had been none — three properties the company could keep filling, indefinitely, in its own voice.</p>
 
@@ -189,86 +205,86 @@
 
     <p>A platform that kept running. I left a format guide, brief templates, a guest pipeline and a visual system. The show kept producing after I left, on the system I’d proudly built.</p>
 
-    <hr class="rule rule--loose" style="margin-top:36px;">
+    <hr class="rule rule--loose">
     <p class="label label--rust">Featured episodes</p>
 
     <ol class="episode-index" aria-label="Episode index">
         <li class="episode">
             <span class="episode__num">06</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/what-the-hack/">What the Hack? Crypto’s Trust Issues</a></h3>
+                <h3 class="episode__title"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/what-the-hack/">What the Hack? Crypto’s Trust Issues</a></h3>
                 <p class="episode__deck">Mikhail Yorgenjeev and Itai Elizur on decentralization vs. protection, proof of reserves, and what it takes for on-chain assets to feel as reliable as traditional finance.</p>
                 <p class="episode__meta">With Yorgenjeev, CertiK &amp; Elizur, MarketAcross <span class="sep">·</span> 2026</p>
             </div>
             <p class="episode__links">
-                <a href="https://open.spotify.com/episode/65AwExhvdl1bjbrFoCHgAd">Spotify</a>
-                <a href="https://www.youtube.com/watch?v=P4AvDKbvPiU">YouTube</a>
-                <a href="https://podcasts.apple.com/il/podcast/what-the-hack-cryptos-trust-issue/id1616389831?i=1000747012718">Apple</a>
+                <a target="_blank" rel="noopener" href="https://open.spotify.com/episode/65AwExhvdl1bjbrFoCHgAd">Spotify</a>
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=P4AvDKbvPiU">YouTube</a>
+                <a target="_blank" rel="noopener" href="https://podcasts.apple.com/il/podcast/what-the-hack-cryptos-trust-issue/id1616389831?i=1000747012718">Apple</a>
             </p>
         </li>
         <li class="episode">
             <span class="episode__num">05</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/control-in-the-age-of-ai-agents/">The Cost of Control in the Age of AI Agents</a></h3>
+                <h3 class="episode__title"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/control-in-the-age-of-ai-agents/">The Cost of Control in the Age of AI Agents</a></h3>
                 <p class="episode__deck">Michael Casey and Tricia Wang on AI agents, enterprise accountability, and how blockchain enables control at scale.</p>
                 <p class="episode__meta">With Casey &amp; Wang, Advanced AI Society <span class="sep">·</span> January 13, 2026</p>
             </div>
             <p class="episode__links">
-                <a href="https://open.spotify.com/episode/3khmPZhXvCnO11aHGQ3Liw">Spotify</a>
-                <a href="https://youtu.be/DML6T7Y_t-s">YouTube</a>
-                <a href="https://podcasts.apple.com/il/podcast/the-cost-of-control-in-the-age-of-ai-agents/id1616389831?i=1000744973932">Apple</a>
+                <a target="_blank" rel="noopener" href="https://open.spotify.com/episode/3khmPZhXvCnO11aHGQ3Liw">Spotify</a>
+                <a target="_blank" rel="noopener" href="https://youtu.be/DML6T7Y_t-s">YouTube</a>
+                <a target="_blank" rel="noopener" href="https://podcasts.apple.com/il/podcast/the-cost-of-control-in-the-age-of-ai-agents/id1616389831?i=1000744973932">Apple</a>
             </p>
         </li>
         <li class="episode">
             <span class="episode__num">04</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/the-gravity-of-growth-what-actually-drives-early-stage-success/">The Gravity of Growth: What Actually Drives Early-Stage Success</a></h3>
+                <h3 class="episode__title"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/the-gravity-of-growth-what-actually-drives-early-stage-success/">The Gravity of Growth: What Actually Drives Early-Stage Success</a></h3>
                 <p class="episode__deck">How to spot early crypto projects worth betting on — traction, founders, and investor signals from the front lines.</p>
                 <p class="episode__meta">With David Langellotti, SpaceComputer <span class="sep">·</span> December 16, 2025</p>
             </div>
             <p class="episode__links">
-                <a href="https://open.spotify.com/episode/1nB1elsgG0rcSWlJwwVofZ">Spotify</a>
-                <a href="https://www.youtube.com/watch?v=pbDJXd1DrO0">YouTube</a>
-                <a href="https://podcasts.apple.com/il/podcast/the-gravity-of-growth-what-actually-drives-early/id1616389831?i=1000741499309">Apple</a>
+                <a target="_blank" rel="noopener" href="https://open.spotify.com/episode/1nB1elsgG0rcSWlJwwVofZ">Spotify</a>
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=pbDJXd1DrO0">YouTube</a>
+                <a target="_blank" rel="noopener" href="https://podcasts.apple.com/il/podcast/the-gravity-of-growth-what-actually-drives-early/id1616389831?i=1000741499309">Apple</a>
             </p>
         </li>
         <li class="episode">
             <span class="episode__num">03</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/meat-potatoes-press-releases-behind-the-pr-journalism-dynamic-in-web3/">Meat, Potatoes &amp; Press Releases</a></h3>
+                <h3 class="episode__title"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/meat-potatoes-press-releases-behind-the-pr-journalism-dynamic-in-web3/">Meat, Potatoes &amp; Press Releases</a></h3>
                 <p class="episode__deck">Behind every Web3 headline is a messy dance between PR and journalists.</p>
                 <p class="episode__meta">With Liam J. Kelly, DLNews <span class="sep">·</span> December 1, 2025</p>
             </div>
             <p class="episode__links">
-                <a href="https://open.spotify.com/episode/3ApHsOLpUUFSGwmHVa3WWL">Spotify</a>
-                <a href="https://www.youtube.com/watch?v=7O7Su7pZDM8">YouTube</a>
-                <a href="https://podcasts.apple.com/il/podcast/meat-potatoes-press-releases-behind-the-pr-journalism/id1616389831?i=1000738995524">Apple</a>
+                <a target="_blank" rel="noopener" href="https://open.spotify.com/episode/3ApHsOLpUUFSGwmHVa3WWL">Spotify</a>
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=7O7Su7pZDM8">YouTube</a>
+                <a target="_blank" rel="noopener" href="https://podcasts.apple.com/il/podcast/meat-potatoes-press-releases-behind-the-pr-journalism/id1616389831?i=1000738995524">Apple</a>
             </p>
         </li>
         <li class="episode">
             <span class="episode__num">02</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/turning-fans-into-stakeholders/">Game On: Inside the Web3 Movement Turning Fans into Stakeholders</a></h3>
+                <h3 class="episode__title"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/turning-fans-into-stakeholders/">Game On: Inside the Web3 Movement Turning Fans into Stakeholders</a></h3>
                 <p class="episode__deck">Sweet CEO Tom Mizzone on how Web3 is transforming sports fandom through participation, ownership, and digital IP.</p>
                 <p class="episode__meta">With Tom Mizzone, Sweet <span class="sep">·</span> November 18, 2025</p>
             </div>
             <p class="episode__links">
-                <a href="https://open.spotify.com/episode/5mfoDAGmu2erVjUTYP69hC">Spotify</a>
-                <a href="https://www.youtube.com/watch?v=RTba4m57PEk">YouTube</a>
-                <a href="https://podcasts.apple.com/il/podcast/game-on-inside-the-web3-movement-turning-fans-into/id1616389831?i=1000737105736">Apple</a>
+                <a target="_blank" rel="noopener" href="https://open.spotify.com/episode/5mfoDAGmu2erVjUTYP69hC">Spotify</a>
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RTba4m57PEk">YouTube</a>
+                <a target="_blank" rel="noopener" href="https://podcasts.apple.com/il/podcast/game-on-inside-the-web3-movement-turning-fans-into/id1616389831?i=1000737105736">Apple</a>
             </p>
         </li>
         <li class="episode">
             <span class="episode__num">01</span>
             <div class="episode__body">
-                <h3 class="episode__title"><a href="https://marketacross.com/podcast/inside-dydxs-journey/">The Decentralization Wake-Up Call: Inside dYdX’s Journey</a></h3>
+                <h3 class="episode__title"><a target="_blank" rel="noopener" href="https://marketacross.com/podcast/inside-dydxs-journey/">The Decentralization Wake-Up Call: Inside dYdX’s Journey</a></h3>
                 <p class="episode__deck">Charles d’Haussy on the paradox of trust in crypto and how dYdX is shaping the future of decentralized trading.</p>
                 <p class="episode__meta">With Charles d’Haussy, dYdX Foundation <span class="sep">·</span> November 4, 2025</p>
             </div>
             <p class="episode__links">
-                <a href="https://open.spotify.com/episode/4DjRC5Rien0Ds5uFF2aEyp">Spotify</a>
-                <a href="https://www.youtube.com/watch?v=vETi0h344cs">YouTube</a>
-                <a href="https://podcasts.apple.com/us/podcast/the-decentralization-wake-up-call-inside-dydxs-journey/id1850451125?i=1000735178070">Apple</a>
+                <a target="_blank" rel="noopener" href="https://open.spotify.com/episode/4DjRC5Rien0Ds5uFF2aEyp">Spotify</a>
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=vETi0h344cs">YouTube</a>
+                <a target="_blank" rel="noopener" href="https://podcasts.apple.com/us/podcast/the-decentralization-wake-up-call-inside-dydxs-journey/id1850451125?i=1000735178070">Apple</a>
             </p>
         </li>
     </ol>
@@ -278,11 +294,11 @@
         <p class="taught__text">Blockbusters taught me to trust my instincts. I set the standard for the show: branding guidelines, format, design, working with editors, all to bring my vision through. By the time I left, the team was running it on its own. Creating something that lasts, that’s the biggest achievement I could ask for.</p>
     </aside>
 
-    <p class="label label--muted" style="margin-top:40px;">Listen</p>
+    <p class="label label--muted label--section">Listen</p>
     <ul class="listen-row" aria-label="Where to listen">
-        <li><a href="https://open.spotify.com/show/3GVPJD6lUDIBPm0XqPXfIa">Spotify</a></li>
-        <li><a href="https://www.youtube.com/@Market_Across">YouTube</a></li>
-        <li><a href="https://podcasts.apple.com/us/podcast/blockbusters/id1616389831">Apple Podcasts</a></li>
+        <li><a target="_blank" rel="noopener" href="https://open.spotify.com/show/3GVPJD6lUDIBPm0XqPXfIa">Spotify</a></li>
+        <li><a target="_blank" rel="noopener" href="https://www.youtube.com/@Market_Across">YouTube</a></li>
+        <li><a target="_blank" rel="noopener" href="https://podcasts.apple.com/us/podcast/blockbusters/id1616389831">Apple Podcasts</a></li>
     </ul>
 
     <p class="ornament" aria-hidden="true">· · ·</p>
@@ -337,6 +353,38 @@
         </div>
     </div>
 </footer>
+
+<script>
+(function () {
+    if (!window.clarity) return;
+    var readEndFired = false;
+    function onScroll() {
+        if (readEndFired) return;
+        var h = document.documentElement.scrollHeight;
+        if ((window.scrollY + window.innerHeight) / h >= 0.95) {
+            readEndFired = true;
+            try { window.clarity('event', 'read-to-end'); } catch (e) {}
+            window.removeEventListener('scroll', onScroll);
+        }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    setTimeout(function () { try { window.clarity('event', 'read-3min'); } catch (e) {} }, 180000);
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (/^https?:\/\//i.test(href) && href.indexOf('aviabu.com') === -1) {
+            try {
+                window.clarity('set', 'destination', href);
+                window.clarity('event', 'outbound-click');
+            } catch (err) {}
+        }
+        if (/\.pdf($|\?)/i.test(href)) {
+            try { window.clarity('event', 'resume-download'); } catch (err) {}
+        }
+    });
+})();
+</script>
 
 </body>
 </html>

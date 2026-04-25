@@ -8,6 +8,21 @@
 
 
     <link rel="stylesheet" href="styles.css?v=33">
+
+    <script>
+    (function () {
+        try {
+            var p = new URLSearchParams(window.location.search);
+            if (p.get('dev') === '1') localStorage.setItem('dev', '1');
+            if (localStorage.getItem('dev') === '1') return;
+        } catch (e) {}
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "whffmy9mnu");
+    })();
+    </script>
 </head>
 <body>
 
@@ -29,11 +44,11 @@
 
         <p class="label label--muted feature__byline">founding content &amp; social hire&nbsp;<span class="colophon__sep">·</span> MarketAcross <span class="colophon__sep">·</span> 2025–2026</p>
 
-        <figure class="cover-hero" style="margin:24px auto 20px;">
-            <div class="figure__embed figure__embed--video" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                <iframe src="https://www.youtube.com/embed/_FPdxOiUZCI?si=kR6ij2D_aGnkR5DQ" title="At ETHDenver 2026: MarketAcross CEO Elad Mor and Genzio's Zack Nelson on what Web3 PR actually looks like" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
+        <figure class="cover-hero cover-hero--inset">
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/_FPdxOiUZCI?si=kR6ij2D_aGnkR5DQ" title="At ETHDenver 2026: MarketAcross CEO Elad Mor and Genzio's Zack Nelson on what Web3 PR actually looks like" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
             </div>
-            <figcaption style="font-size: 13px; color: rgb(136, 136, 136); letter-spacing: 0.01em; line-height: 1.5; margin-top: 10px;">At ETHDenver 2026: MarketAcross CEO Elad Mor and Genzio’s Zack Nelson on what Web3 PR actually looks like. Coordinated, produced and published for MarketAcross.</figcaption>
+            <figcaption class="figure__caption figure__caption--video">At ETHDenver 2026: MarketAcross CEO Elad Mor and Genzio’s Zack Nelson on what Web3 PR actually looks like. Coordinated, produced and published for MarketAcross.</figcaption>
         </figure>
 
         <hr class="rule rule--loose">
@@ -95,15 +110,15 @@
             </dl>
         </aside>
 
-        <p class="label label--rust" style="margin-top: 32px;">The first pulse: social</p>
+        <p class="label label--rust label--section">The first pulse: social</p>
 
         <p>Social was where I could move fastest. I took LinkedIn and X end-to-end and built a publishing rhythm across four streams: event coverage, educational content, client success stories, and weekly series. Most of it I produced end-to-end — copy, content editing, video direction, carousel and image design. <b>LinkedIn grew an average of 40+ net new followers a month</b>, and <b>I started a monthly analytics meeting</b> to benchmark against competitors and decide what was working, what wasn't, and what to retire.</p>
 
-        <p class="label label--rust" style="margin-top: 32px;">building a content engine</p>
+        <p class="label label--rust label--section">building a content engine</p>
 
         <p>From there my focus was building a 360 content engine — blog, social, podcast, thought leadership, event coverage, evergreen SEO, AEO and GEO — all running off the same brand voice. I designed a process for getting the expertise out of the people who held it: half-hour interviews with account managers, strategists and leadership, turned into 1,200-word pieces drafted by me and bylined to whoever earned it. The editorial standard was mine; the expertise was theirs.</p>
 
-        <p class="label label--rust" style="margin-top:40px;">Selected blog posts</p>
+        <p class="label label--rust label--section">Selected blog posts</p>
 
         <ol class="essay-stack" aria-label="Selected blog posts">
             <li>
@@ -140,7 +155,7 @@
             </li>
         </ol>
 
-        <p class="label label--rust" style="margin-top:48px;">What I took from this</p>
+        <p class="label label--rust label--section">What I took from this</p>
 
         <aside class="closer" aria-label="What I took from this">
             <p class="closer__terms">B2B content strategy, brand voice, executive thought leadership, SEO, AEO and GEO, demand-gen content, social-first publishing, editorial process, analytics-led iteration.</p>
@@ -173,6 +188,38 @@
         </div>
     </div>
 </footer>
+
+<script>
+(function () {
+    if (!window.clarity) return;
+    var readEndFired = false;
+    function onScroll() {
+        if (readEndFired) return;
+        var h = document.documentElement.scrollHeight;
+        if ((window.scrollY + window.innerHeight) / h >= 0.95) {
+            readEndFired = true;
+            try { window.clarity('event', 'read-to-end'); } catch (e) {}
+            window.removeEventListener('scroll', onScroll);
+        }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    setTimeout(function () { try { window.clarity('event', 'read-3min'); } catch (e) {} }, 180000);
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (/^https?:\/\//i.test(href) && href.indexOf('aviabu.com') === -1) {
+            try {
+                window.clarity('set', 'destination', href);
+                window.clarity('event', 'outbound-click');
+            } catch (err) {}
+        }
+        if (/\.pdf($|\?)/i.test(href)) {
+            try { window.clarity('event', 'resume-download'); } catch (err) {}
+        }
+    });
+})();
+</script>
 
 </body>
 </html>

@@ -67,6 +67,15 @@
     --content-max: 680px;
 
     --gutter: clamp(20px, 5vw, 64px);
+
+    /* Spacing tokens — used for vertical rhythm across pages */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
 }
 
 /* -----  Reset  ----------------------------------------------------------- */
@@ -175,7 +184,7 @@ a:hover {
     font-weight: 400;
     font-size: clamp(21px, 2.8vw, 24px);
     line-height: 1.4;
-    margin: 24px 0 0;
+    margin: var(--space-md) 0 0;
     text-wrap: pretty;
     color: var(--ink);
 }
@@ -186,14 +195,14 @@ a:hover {
     border: 0;
     height: 1px;
     background: var(--rule);
-    margin: 32px 0;
+    margin: var(--space-lg) 0;
 }
-.rule--tight { margin: 16px 0; }
-.rule--loose { margin: 48px 0; }
+.rule--tight { margin: var(--space-sm) 0; }
+.rule--loose { margin: var(--space-xl) 0; }
 
 @media (max-height: 820px) {
-    .rule { margin: 24px 0; }
-    .rule--loose { margin: 32px 0; }
+    .rule { margin: var(--space-md) 0; }
+    .rule--loose { margin: var(--space-lg) 0; }
 }
 
 /* -----  Masthead strip (top of every page)  ---------------------------- */
@@ -240,14 +249,15 @@ a:hover {
 .article {
     max-width: var(--content-max);
     margin: 0 auto;
-    padding: 48px 0 32px;
+    padding: var(--space-xl) 0 var(--space-lg);
 }
 
 @media (min-width: 768px) {
-    .article { padding: 80px 0 48px; }
+    .article { padding: 80px 0 var(--space-xl); }
 }
 
-/* Tighten top padding on short viewports so body peeks above the fold */
+/* Top padding shrinks on short viewports so the body peeks above the fold —
+   intentional design choice, not a rhythm break. */
 @media (max-height: 820px) {
     .article { padding-top: 40px; }
 }
@@ -362,7 +372,7 @@ body.anim-ticker .cover__hero { --hero-chrome: 42px; }
 }
 
 .cover__epigraph {
-    margin: 32px auto 0;
+    margin: var(--space-lg) auto 0;
     max-width: 30ch;
     padding: 0;
     border: 0;
@@ -523,6 +533,7 @@ body.anim-ticker .cover__hero { --hero-chrome: 42px; }
     line-height: 0.98;
     letter-spacing: -0.025em;
     margin: 0;
+    text-align: left;
     text-wrap: balance;
 }
 
@@ -561,7 +572,7 @@ p.dropcap::first-letter {
     font-size: clamp(26px, 4.2vw, 36px);
     line-height: 1.25;
     letter-spacing: -0.01em;
-    margin: 48px 0;
+    margin: var(--space-xl) 0;
     padding: 16px 0;
     max-width: 100%;
     text-wrap: balance;
@@ -577,17 +588,17 @@ p.dropcap::first-letter {
 .pullquote::after  { content: "”"; margin-left: 0.05em; }
 
 @media (min-width: 768px) {
-    .pullquote { margin: 64px 0; }
+    .pullquote { margin: var(--space-2xl) 0; }
 }
 
 /* Figures ---------------------------------------------------------------- */
 
 .figure {
-    margin: 48px 0;
+    margin: var(--space-xl) 0;
     max-width: 100%;
 }
 @media (min-width: 768px) {
-    .figure { margin: 64px 0; }
+    .figure { margin: var(--space-2xl) 0; }
 }
 
 .figure__embed {
@@ -643,7 +654,7 @@ p.dropcap::first-letter {
 /* Next feature link ------------------------------------------------------- */
 
 .next-feature {
-    margin: 32px 0 0;
+    margin: var(--space-lg) 0 0;
     padding: 24px 0 8px;
     border-top: 1px solid var(--rule);
     display: flex;
@@ -668,7 +679,7 @@ p.dropcap::first-letter {
 }
 
 .back-to-contents {
-    margin: 48px 0 0;
+    margin: var(--space-xl) 0 0;
     font-family: var(--label);
     font-weight: 500;
     font-size: 12px;
@@ -679,7 +690,7 @@ p.dropcap::first-letter {
 /* -----  Essays page specifics  ----------------------------------------- */
 
 .essay-stack {
-    margin: 48px 0;
+    margin: var(--space-xl) 0;
     list-style: none;
     padding: 0;
 }
@@ -745,7 +756,7 @@ p.dropcap::first-letter {
 /* -----  About page specifics  ------------------------------------------ */
 
 .aside {
-    margin: 64px auto;
+    margin: var(--space-2xl) auto;
     max-width: var(--content-max);
     background: var(--cream-tint);
     border-top: 2px solid var(--rust);
@@ -774,7 +785,7 @@ p.dropcap::first-letter {
 .logline-list {
     list-style: none;
     padding: 0;
-    margin: 24px 0 0;
+    margin: var(--space-md) 0 0;
 }
 .logline-list li {
     padding: 16px 0;
@@ -804,7 +815,7 @@ p.dropcap::first-letter {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--rust);
-    margin: 32px 0 16px;
+    margin: var(--space-lg) 0 var(--space-sm);
 }
 
 .screenplay {
@@ -824,9 +835,11 @@ p.dropcap::first-letter {
     font-weight: 400;
     font-size: clamp(26px, 4vw, 36px);
     letter-spacing: -0.01em;
-    margin: 24px 0 6px;
+    margin: var(--space-md) 0 6px;
     display: block;
 }
+
+.contact-large--sub { font-size: clamp(20px, 3vw, 26px); }
 
 .download-cv {
     font-family: var(--label);
@@ -836,6 +849,43 @@ p.dropcap::first-letter {
     text-transform: uppercase;
     color: var(--rust);
 }
+
+/* Section labels — kicker labels mid-article. Replaces ad-hoc inline margins. */
+.label--section { margin-top: var(--space-xl); }
+/* Flush against a preceding rule/element (overrides .article > * + * gap). */
+.article > .label--flush { margin-top: 0; }
+
+/* Raw 16:9 iframe wrapper (YouTube embeds outside .figure__embed). */
+.video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Caption variant for video covers (small, muted). */
+.figure__caption--video {
+    font-family: var(--serif-body);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-60);
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Cover-hero with tighter top margin (used on content-marketing). */
+.cover-hero--inset { margin: var(--space-md) auto 20px; }
+
+/* Tail line under the video-proof grid on blockbusters. */
+.video-proof-tail--spaced { margin-top: var(--space-sm); }
 
 /* -----  Blockbusters page specifics  ---------------------------------- */
 
@@ -869,7 +919,7 @@ p.dropcap::first-letter {
 
 /* Credit strip — who made what, small-caps columns */
 .credit-strip {
-    margin: 32px 0;
+    margin: var(--space-lg) 0;
     padding: 20px 0;
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
@@ -1015,7 +1065,7 @@ ol.episode-index > li::marker { content: ""; }
 
 /* Guest wall */
 .guest-wall {
-    margin: 48px 0 0;
+    margin: var(--space-xl) 0 0;
     padding: 32px 0 8px;
     border-top: 1px solid var(--rule);
 }
@@ -1128,7 +1178,7 @@ ol.episode-index > li::marker { content: ""; }
 
 /* Listen proof block — closing figure, flat (no dashed placeholder frame) */
 .listen-proof {
-    margin: 64px 0 24px;
+    margin: var(--space-2xl) 0 var(--space-md);
     padding: 32px clamp(20px, 4vw, 40px);
     border: 1px solid var(--ink);
     background: var(--cream);
@@ -1224,8 +1274,8 @@ ol.episode-index > li::marker { content: ""; }
 /* -----  Colophon footer  ------------------------------------------------ */
 
 .colophon {
-    margin-top: 96px;
-    padding: 28px var(--gutter) 56px;
+    margin-top: var(--space-3xl);
+    padding: 28px var(--gutter) var(--space-2xl);
     border-top: 1px solid var(--rule);
 }
 
@@ -1246,11 +1296,22 @@ ol.episode-index > li::marker { content: ""; }
 @media (min-width: 768px) {
     .colophon__inner {
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 32px;
+        gap: var(--space-lg);
     }
     .colophon__col--center { text-align: center; }
     .colophon__col--right  { text-align: right; }
 }
+
+/* Expanded contact-style colophon used on the About page */
+.colophon--expanded .colophon__inner--stacked {
+    display: block;
+    max-width: var(--content-max);
+    text-align: left;
+}
+.colophon__heading { margin: 0 0 var(--space-xs); }
+.colophon__cv      { margin: var(--space-md) 0 0; }
+.colophon__rule    { margin: var(--space-lg) 0 var(--space-sm); }
+.colophon__signoff { margin: 0; }
 
 .colophon a {
     color: var(--ink);
@@ -1520,7 +1581,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
 }
 
 .video-proof-tail {
-    margin: 8px 0 48px;
+    margin: var(--space-xs) 0 var(--space-xl);
     font-family: var(--label);
     font-weight: 500;
     font-size: 12px;
@@ -1744,7 +1805,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--ink-70, #4a4038);
-    margin: 24px 0 0;
+    margin: var(--space-md) 0 0;
 }
 .video-proof-tail a { color: var(--rust, #b55a3a); }
 
@@ -1776,7 +1837,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
    Toolkit strip — stack/platforms list (content-marketing.html)
    ============================================================ */
 .toolkit {
-    margin: 48px 0 8px;
+    margin: var(--space-xl) 0 var(--space-xs);
     max-width: var(--measure);
     background: var(--cream-tint);
     border-top: 2px solid var(--rust);
@@ -1888,7 +1949,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
 .barista-line {
     font-size: clamp(22px, 2.4vw, 26px);
     line-height: 1.4;
-    margin: 32px 0 8px;
+    margin: var(--space-lg) 0 var(--space-xs);
     padding-left: 24px;
     border-left: 2px solid var(--rust);
     text-wrap: balance;

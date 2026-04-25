@@ -8,6 +8,21 @@
 
 
     <link rel="stylesheet" href="styles.css?v=33">
+
+    <script>
+    (function () {
+        try {
+            var p = new URLSearchParams(window.location.search);
+            if (p.get('dev') === '1') localStorage.setItem('dev', '1');
+            if (localStorage.getItem('dev') === '1') return;
+        } catch (e) {}
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "whffmy9mnu");
+    })();
+    </script>
 </head>
 <body>
 
@@ -43,7 +58,7 @@
         </div>
         <div>
             <dt class="credit-strip__term">Live at</dt>
-            <dd class="credit-strip__desc"><a href="https://www.hazira.sites.tau.ac.il/">hazira.sites.tau.ac.il</a></dd>
+            <dd class="credit-strip__desc"><a target="_blank" rel="noopener" href="https://www.hazira.sites.tau.ac.il/">hazira.sites.tau.ac.il</a></dd>
         </div>
     </dl>
 
@@ -113,7 +128,7 @@
         </div>
     </div>
 
-    <p class="video-proof-tail">See the full series → <a href="https://www.hazira.sites.tau.ac.il/">hazira.sites.tau.ac.il</a></p>
+    <p class="video-proof-tail">See the full series → <a target="_blank" rel="noopener" href="https://www.hazira.sites.tau.ac.il/">hazira.sites.tau.ac.il</a></p>
 
     <p class="ornament" aria-hidden="true">· · ·</p>
 
@@ -169,6 +184,38 @@
 </script>
 
 <script async src="https://www.instagram.com/embed.js"></script>
+
+<script>
+(function () {
+    if (!window.clarity) return;
+    var readEndFired = false;
+    function onScroll() {
+        if (readEndFired) return;
+        var h = document.documentElement.scrollHeight;
+        if ((window.scrollY + window.innerHeight) / h >= 0.95) {
+            readEndFired = true;
+            try { window.clarity('event', 'read-to-end'); } catch (e) {}
+            window.removeEventListener('scroll', onScroll);
+        }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    setTimeout(function () { try { window.clarity('event', 'read-3min'); } catch (e) {} }, 180000);
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href]');
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (/^https?:\/\//i.test(href) && href.indexOf('aviabu.com') === -1) {
+            try {
+                window.clarity('set', 'destination', href);
+                window.clarity('event', 'outbound-click');
+            } catch (err) {}
+        }
+        if (/\.pdf($|\?)/i.test(href)) {
+            try { window.clarity('event', 'resume-download'); } catch (err) {}
+        }
+    });
+})();
+</script>
 
 </body>
 </html>

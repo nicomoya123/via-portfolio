@@ -8,6 +8,21 @@
 
 
     <link rel="stylesheet" href="styles.css?v=33">
+
+    <script>
+    (function () {
+        try {
+            var p = new URLSearchParams(window.location.search);
+            if (p.get('dev') === '1') localStorage.setItem('dev', '1');
+            if (localStorage.getItem('dev') === '1') return;
+        } catch (e) {}
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "whffmy9mnu");
+    })();
+    </script>
 </head>
 <body>
 
@@ -71,15 +86,15 @@ AVIA wakes up hysterically from her bed, her hand close to her heart, practicall
 </main>
 
 <footer class="colophon colophon--expanded" role="contentinfo">
-    <div class="colophon__inner" style="display:block; max-width:var(--content-max); text-align:left;">
-        <p class="label label--muted" style="margin:0 0 8px;">Contact</p>
+    <div class="colophon__inner colophon__inner--stacked">
+        <p class="label label--muted colophon__heading">Contact</p>
         <a class="contact-large" href="mailto:via247@gmail.com">via247@gmail.com</a>
-        <a class="contact-large" href="https://www.linkedin.com/in/avia-ben-uriah-78066715b/" target="_blank" rel="noopener" style="font-size:clamp(20px,3vw,26px);">LinkedIn — /in/avia-ben-uriah</a>
-        <p style="margin:24px 0 0;">
-            <a class="download-cv" href="#" aria-disabled="true" title="CV coming soon">Download CV — PDF</a>
+        <a class="contact-large contact-large--sub" href="https://www.linkedin.com/in/avia-ben-uriah-78066715b/" target="_blank" rel="noopener">LinkedIn — /in/avia-ben-uriah</a>
+        <p class="colophon__cv">
+            <a class="download-cv" href="assets/avia-ben-uriah-cv.pdf" download>Download CV — PDF</a>
         </p>
-        <hr class="rule" style="margin:32px 0 16px;">
-        <p class="label label--muted" style="margin:0;">
+        <hr class="rule colophon__rule">
+        <p class="label label--muted colophon__signoff">
             Avia Ben Uriah <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> © 2026
         </p>
     </div>

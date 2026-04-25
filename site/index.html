@@ -9,6 +9,21 @@
 
     <link rel="stylesheet" href="styles.css?v=33">
 
+    <script>
+    (function () {
+        try {
+            var p = new URLSearchParams(window.location.search);
+            if (p.get('dev') === '1') localStorage.setItem('dev', '1');
+            if (localStorage.getItem('dev') === '1') return;
+        } catch (e) {}
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "whffmy9mnu");
+    })();
+    </script>
+
     <style>
         /* Tweaks panel — hidden by default, visible when .tweaks-open on body */
         .tweaks-panel {
@@ -217,10 +232,12 @@
             Avia Ben Uriah <span class="colophon__sep">·</span> Tel Aviv <span class="colophon__sep">·</span> 2026
         </div>
         <div class="colophon__col colophon__col--center">
-            <a href="about.html">About &amp; contact</a>
+            <a href="mailto:via247@gmail.com">via247@gmail.com</a>
+            <span class="colophon__sep">·</span>
+            <a href="https://www.linkedin.com/in/avia-ben-uriah-78066715b/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <div class="colophon__col colophon__col--right">
-            Issue 28
+            <a href="about.html">About &amp; contact</a>
         </div>
     </div>
 </footer>
@@ -379,18 +396,18 @@
                 var startY = window.scrollY;
                 var targetY = target.getBoundingClientRect().top + startY - 24; // match scroll-margin
                 var distance = targetY - startY;
-                var duration = 1100; // ms — slower, more editorial than default
+                var duration = 900; // ms — punchy start, soft landing
                 var t0 = null;
 
-                function easeInOutCubic(t) {
-                    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                function easeOutExpo(t) {
+                    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
                 }
 
                 function step(ts) {
                     if (t0 === null) t0 = ts;
                     var elapsed = ts - t0;
                     var t = Math.min(elapsed / duration, 1);
-                    window.scrollTo(0, startY + distance * easeInOutCubic(t));
+                    window.scrollTo(0, startY + distance * easeOutExpo(t));
                     if (t < 1) requestAnimationFrame(step);
                     else history.replaceState(null, '', href);
                 }
