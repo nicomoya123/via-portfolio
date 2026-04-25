@@ -7,7 +7,7 @@
     <meta name="description" content="Avia on building the TAU Official Store from zero — vendors, design, dev, launch, and the system that produced TAU X GELADA.">
 
 
-    <link rel="stylesheet" href="styles.css?v=29">
+    <link rel="stylesheet" href="styles.css?v=33">
     <style>
         /* Product proof grid — 4 across on desktop, square thumbs */
         .product-proof {
@@ -41,13 +41,19 @@
             color: var(--ink-80);
             margin: 10px 0 0;
             line-height: 1.3;
+            transition: color 180ms ease;
         }
-        .product-proof__price {
-            font-family: var(--serif-body);
-            font-size: 13px;
-            color: var(--ink-60);
-            margin: 2px 0 0;
+        /* Card link keeps the global 1px underline; only the layout/colour are tweaked */
+        .product-proof__card a {
+            display: block;
+            color: inherit;
         }
+        .product-proof__thumb {
+            transition: border-color 180ms ease;
+        }
+        .product-proof__card a:hover { color: var(--rust); }
+        .product-proof__card a:hover .product-proof__name { color: var(--rust); }
+        .product-proof__card a:hover .product-proof__thumb { border-color: var(--rust); }
 
         /* Lifestyle asset — full width image block */
         .lifestyle-figure--hero {
@@ -80,6 +86,9 @@
             .ig-grid { grid-template-columns: repeat(2, minmax(326px, 1fr)); }
         }
         .ig-grid .instagram-media { width: 100% !important; }
+        .ig-crop { overflow: hidden; border-radius: 3px; width: 100%; max-width: 540px; }
+        .ig-crop > .instagram-media,
+        .ig-crop > iframe.instagram-media-rendered { margin-bottom: -160px !important; display: block; }
 
         /* LinkedIn embed wrapper */
         .li-embed {
@@ -176,7 +185,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">Yarkon T-Shirt</p>
-                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
             </a>
         </li>
         <li class="product-proof__card">
@@ -188,7 +196,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">Gordon Beach Tee</p>
-                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
             </a>
         </li>
         <li class="product-proof__card">
@@ -200,7 +207,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">HaBima Tee</p>
-                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
             </a>
         </li>
         <li class="product-proof__card">
@@ -212,7 +218,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">Sourasky Tee</p>
-                <p class="product-proof__price">TAU X GELADA · 75 NIS</p>
             </a>
         </li>
     </ol>
@@ -229,7 +234,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">TAU Hoodie (Grey)</p>
-                <p class="product-proof__price">Essentials · 105 NIS</p>
             </a>
         </li>
         <li class="product-proof__card">
@@ -241,7 +245,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">TAU Tote</p>
-                <p class="product-proof__price">Essentials · 35 NIS</p>
             </a>
         </li>
         <li class="product-proof__card">
@@ -253,7 +256,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">TAU Mug</p>
-                <p class="product-proof__price">Essentials · 65 NIS</p>
             </a>
         </li>
         <li class="product-proof__card">
@@ -265,7 +267,6 @@
                     </picture>
                 </div>
                 <p class="product-proof__name">The Laptop Case</p>
-                <p class="product-proof__price">Essentials · 75 NIS</p>
             </a>
         </li>
     </ol>
@@ -277,12 +278,12 @@
     <p class="label label--rust" style="margin-top:40px;">From the floor · TAU Shop on camera</p>
 
     <div class="ig-grid" aria-label="TAU Shop videos on Instagram">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLXUQPwiVY9/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
+        <div class="ig-crop"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DLXUQPwiVY9/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
             <a href="https://www.instagram.com/reel/DLXUQPwiVY9/">View on Instagram</a>
-        </blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOqKKsrj4wc/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
+        </blockquote></div>
+        <div class="ig-crop"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOqKKsrj4wc/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
             <a href="https://www.instagram.com/reel/DOqKKsrj4wc/">View on Instagram</a>
-        </blockquote>
+        </blockquote></div>
     </div>
 
     <aside class="taught" aria-labelledby="taught-label">

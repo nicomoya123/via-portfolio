@@ -7,7 +7,7 @@
     <meta name="description" content="Blockbusters — a Web3 PR podcast I built from zero: format, brand, production, copy and page. MarketAcross, 2024–2026.">
 
 
-    <link rel="stylesheet" href="styles.css?v=29">
+    <link rel="stylesheet" href="styles.css?v=33">
     <style>
         /* Cover hero — mirrors the TAU Shop lifestyle figure treatment */
         .cover-hero {
@@ -50,41 +50,17 @@
             letter-spacing: -0.005em;
         }
 
-        /* YouTube Shorts grid — vertical 9:16 iframe per short */
-        .shorts-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin: 16px 0 24px;
-        }
-        @media (min-width: 720px) {
-            .shorts-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
-        }
-        .short { margin: 0; }
-        .short__embed {
-            position: relative;
-            padding-bottom: 177.78%;
-            height: 0;
-            overflow: hidden;
-            border: 1px solid var(--rule);
+        /* YouTube Shorts carousel — iframe fills the 9:16 reel-card thumb */
+        .reel-card__thumb--yt {
+            padding: 0;
             background: #000;
         }
-        .short__embed iframe {
+        .reel-card__thumb--yt iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: 0;
-        }
-        .short figcaption {
-            font-family: var(--label);
-            font-size: 11px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--ink-60);
-            margin-top: 8px;
-            line-height: 1.4;
-            text-wrap: balance;
         }
     </style>
 </head>
@@ -142,33 +118,59 @@
     <p>I shaped the show around the audience that mattered to the brand: founders, CMOs and operators inside the industry, plus the journalists covering them. Then I worked on the voice. Confident without being loud. An expert POV from a team that had lived through more than one cycle and knew how to survive each. A show about PR, marketing and growth in Web3, not delivered in a PR tone.</p>
 
     <hr class="rule rule--loose" style="margin-top:36px;">
-    <p class="label label--rust" style="margin-top:0;">Shorts</p>
+    <p class="label label--rust" style="margin-top:0;">Shorts · swipe to browse</p>
 
-    <div class="shorts-grid" aria-label="Blockbusters shorts on YouTube">
-        <figure class="short">
-            <div class="short__embed">
-                <iframe src="https://www.youtube.com/embed/2hAUELfS4ko" title="Short — The Cost of Control in the Age of AI Agents" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <figcaption>The Cost of Control — Casey &amp; Wang</figcaption>
-        </figure>
-        <figure class="short">
-            <div class="short__embed">
-                <iframe src="https://www.youtube.com/embed/qLwXTCULdsU" title="Short — Meat, Potatoes &amp; Press Releases" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <figcaption>Meat, Potatoes &amp; Press Releases — Liam J. Kelly</figcaption>
-        </figure>
-        <figure class="short">
-            <div class="short__embed">
-                <iframe src="https://www.youtube.com/embed/NL7Y1ujE3XU" title="Short — Game On: Turning Fans into Stakeholders" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <figcaption>Game On — Tom Mizzone, Sweet</figcaption>
-        </figure>
-        <figure class="short">
-            <div class="short__embed">
-                <iframe src="https://www.youtube.com/embed/IQuFvpRDSkg" title="Short — The Decentralization Wake-Up Call" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <figcaption>The Decentralization Wake-Up Call — Charles d’Haussy</figcaption>
-        </figure>
+    <div class="reel-carousel" role="region" aria-label="Blockbusters shorts on YouTube">
+        <ol class="reel-carousel__track">
+            <li class="reel-card">
+                <div class="reel-card__thumb reel-card__thumb--yt">
+                    <iframe src="https://www.youtube.com/embed/2hAUELfS4ko" title="Short — The Cost of Control in the Age of AI Agents" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="reel-card__body">
+                    <span class="reel-card__topic">AI · Enterprise</span>
+                    <h3 class="reel-card__title">The Cost of Control in the Age of AI Agents</h3>
+                    <p class="reel-card__speaker">With Michael Casey &amp; Tricia Wang, Advanced AI Society — on agents, accountability, and what blockchain adds to control at scale.</p>
+                    <a class="reel-card__watch" href="https://youtube.com/shorts/2hAUELfS4ko" target="_blank" rel="noopener">Watch on YouTube →</a>
+                </div>
+            </li>
+            <li class="reel-card">
+                <div class="reel-card__thumb reel-card__thumb--yt">
+                    <iframe src="https://www.youtube.com/embed/qLwXTCULdsU" title="Short — Meat, Potatoes &amp; Press Releases" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="reel-card__body">
+                    <span class="reel-card__topic">PR · Journalism</span>
+                    <h3 class="reel-card__title">Meat, Potatoes &amp; Press Releases</h3>
+                    <p class="reel-card__speaker">With Liam J. Kelly, DLNews — on how press releases actually move through a Web3 newsroom, and what makes a story get picked up.</p>
+                    <a class="reel-card__watch" href="https://youtube.com/shorts/qLwXTCULdsU" target="_blank" rel="noopener">Watch on YouTube →</a>
+                </div>
+            </li>
+            <li class="reel-card">
+                <div class="reel-card__thumb reel-card__thumb--yt">
+                    <iframe src="https://www.youtube.com/embed/NL7Y1ujE3XU" title="Short — Game On: Turning Fans into Stakeholders" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="reel-card__body">
+                    <span class="reel-card__topic">Sports · Web3</span>
+                    <h3 class="reel-card__title">Game On: Turning Fans into Stakeholders</h3>
+                    <p class="reel-card__speaker">With Tom Mizzone, Sweet — on how Web3 is transforming sports fandom through participation, ownership, and digital IP.</p>
+                    <a class="reel-card__watch" href="https://youtube.com/shorts/NL7Y1ujE3XU" target="_blank" rel="noopener">Watch on YouTube →</a>
+                </div>
+            </li>
+            <li class="reel-card">
+                <div class="reel-card__thumb reel-card__thumb--yt">
+                    <iframe src="https://www.youtube.com/embed/IQuFvpRDSkg" title="Short — The Decentralization Wake-Up Call" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="reel-card__body">
+                    <span class="reel-card__topic">DeFi · Trust</span>
+                    <h3 class="reel-card__title">The Decentralization Wake-Up Call</h3>
+                    <p class="reel-card__speaker">With Charles d’Haussy, dYdX Foundation — on the paradox of trust in crypto and how dYdX is shaping the future of decentralized trading.</p>
+                    <a class="reel-card__watch" href="https://youtube.com/shorts/IQuFvpRDSkg" target="_blank" rel="noopener">Watch on YouTube →</a>
+                </div>
+            </li>
+        </ol>
+        <div class="reel-carousel__controls" aria-hidden="true">
+            <button class="reel-carousel__btn reel-carousel__btn--prev" type="button" aria-label="Previous short">←</button>
+            <button class="reel-carousel__btn reel-carousel__btn--next" type="button" aria-label="Next short">→</button>
+        </div>
     </div>
 
     <p class="label label--rust" style="margin-top:40px;">From zero to on-air</p>
@@ -287,13 +289,38 @@
 
     <div class="next-feature">
         <span class="label next-feature__label">Next feature</span>
-        <a class="next-feature__link" href="essays.html">Four Essays →</a>
+        <a class="next-feature__link" href="content-marketing.html">B2B Content Marketing →</a>
     </div>
 
     <p class="back-to-contents"><a href="index.html">← Back to contents</a></p>
 </article>
 
 </main>
+
+<script>
+    // Reel carousel — arrow buttons scroll the track by one card at a time
+    (function () {
+        var track = document.querySelector('.reel-carousel__track');
+        if (!track) return;
+        var prev = document.querySelector('.reel-carousel__btn--prev');
+        var next = document.querySelector('.reel-carousel__btn--next');
+
+        function step() {
+            var card = track.querySelector('.reel-card');
+            if (!card) return track.clientWidth;
+            var styles = getComputedStyle(track);
+            var gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+            return card.getBoundingClientRect().width + gap;
+        }
+
+        if (prev) prev.addEventListener('click', function () {
+            track.scrollBy({ left: -step(), behavior: 'smooth' });
+        });
+        if (next) next.addEventListener('click', function () {
+            track.scrollBy({ left: step(), behavior: 'smooth' });
+        });
+    })();
+</script>
 
 <footer class="colophon" role="contentinfo">
     <div class="colophon__inner">

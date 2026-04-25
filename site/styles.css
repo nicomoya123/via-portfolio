@@ -458,9 +458,14 @@ body.anim-ticker .cover__hero { --hero-chrome: 42px; }
     padding: 22px 0;
     background: none;
 }
-.toc__link:hover { background: none; color: inherit; }
-.toc__link:hover .toc__title-text {
+.toc__item { transition: border-color 180ms ease; }
+.toc__item:has(.toc__link:hover),
+.toc__item:has(.toc__link:hover) + .toc__item { border-color: var(--rust); }
+.toc__link:hover { background: none; color: var(--rust); }
+.toc__link:hover .toc__title-text,
+.toc__link:hover .toc__num {
     color: var(--rust);
+    transition: color 180ms ease;
 }
 
 .toc__num {
@@ -686,8 +691,14 @@ p.dropcap::first-letter {
     background: none;
 }
 .essay-card:last-child { border-bottom: 1px solid var(--rule); }
-.essay-card:hover { background: none; color: inherit; }
-.essay-card:hover .essay-card__title { color: var(--rust); }
+.essay-card { transition: border-color 180ms ease; }
+.essay-card:hover { background: none; color: var(--rust); border-top-color: var(--rust); }
+.essay-card:hover + .essay-card { border-top-color: var(--rust); }
+.essay-card:hover .essay-card__title,
+.essay-card:hover .essay-card__deck,
+.essay-card:hover .essay-card__mark,
+.essay-card:hover .essay-card__read { color: var(--rust); transition: color 180ms ease; }
+.essay-card:hover .essay-card__mark { border-color: var(--rust); }
 
 .essay-card__mark {
     display: inline-block;
@@ -1306,15 +1317,22 @@ body.anim-ticker .masthead { display: none; }
 .ticker__track {
     display: inline-flex;
     gap: 2.5em;
-    padding-left: 2.5em;
     will-change: transform;
     animation: tickerScroll 36s linear infinite;
 }
 .ticker__track > span { flex: 0 0 auto; }
 .ticker__track .dot { color: var(--rust); }
+/* Loop math: with `gap: 2.5em` between every pair (including the seam
+   between the two duplicate sets), translateX(-50%) lands 1.25em short
+   of the seam. Subtracting the half-gap lines set 2's first span up
+   exactly where set 1's first span was — no jump. */
 @keyframes tickerScroll {
     from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    to   { transform: translateX(calc(-50% - 1.25em)); }
+}
+.ticker__track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+    .ticker__track { animation: none; }
 }
 
 /* (c) Typewriter on standfirst — caret + width reveal */
@@ -1635,6 +1653,16 @@ body.cover-page.anim-toc.cover-ready .toc__item {
     border-radius: 2px;
     min-height: 540px;
 }
+.reel-card__crop {
+    overflow: hidden;
+    border-radius: 2px;
+    margin: 0 0 12px;
+}
+.reel-card__crop > .reel-card__embed,
+.reel-card__crop > iframe.instagram-media-rendered {
+    margin: 0 0 -160px !important;
+    display: block;
+}
 .reel-card__thumb--filled {
     background-image: none;
 }
@@ -1745,7 +1773,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
 .section-head + p { margin-top: 0; }
 
 /* ============================================================
-   Toolkit strip — stack/platforms list (essays.html)
+   Toolkit strip — stack/platforms list (content-marketing.html)
    ============================================================ */
 .toolkit {
     margin: 48px 0 8px;
@@ -1821,7 +1849,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
 }
 
 /* ============================================================
-   Closer card — final paragraph, cream-tint (essays.html)
+   Closer card — final paragraph, cream-tint (content-marketing.html)
    ============================================================ */
 .closer {
     margin: 20px 0 0;
