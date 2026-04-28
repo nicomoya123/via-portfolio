@@ -985,11 +985,6 @@ ol.episode-index > li::marker { content: ""; }
     padding: 28px 0;
     border-bottom: 1px solid var(--rule);
 }
-@media (min-width: 768px) {
-    .episode {
-        grid-template-columns: 44px 1fr 180px;
-    }
-}
 
 .episode__num {
     font-family: var(--label);
@@ -1941,6 +1936,55 @@ body.cover-page.anim-toc.cover-ready .toc__item {
     color: var(--ink);
     margin: 0;
     text-wrap: pretty;
+}
+
+/* ============================================================
+   Recruiter TL;DR — pinned callout at the top of about.html
+   ============================================================ */
+.recruiter-tldr {
+    margin: 28px 0 48px;
+    padding: 24px clamp(22px, 4vw, 40px);
+    background: var(--cream-tint);
+    border-top: 4px solid var(--rust);
+    border-bottom: 1px solid var(--rule);
+}
+.recruiter-tldr__label {
+    font-family: var(--label);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin: 0 0 12px;
+}
+.recruiter-tldr__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 62ch;
+}
+.recruiter-tldr__list li {
+    font-family: var(--label);
+    font-weight: 500;
+    font-size: clamp(14px, 1.35vw, 15.5px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    padding-left: 20px;
+    position: relative;
+    text-wrap: pretty;
+}
+.recruiter-tldr__list li::before {
+    content: "\2022";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    color: var(--rust);
+    font-size: 1.05em;
+    line-height: 1.45;
 }
 
 /* ============================================================
