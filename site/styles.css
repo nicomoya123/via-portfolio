@@ -830,24 +830,39 @@ p.dropcap::first-letter {
     overflow-x: auto;
 }
 
-.contact-large {
-    font-family: var(--serif-display);
-    font-weight: 400;
-    font-size: clamp(26px, 4vw, 36px);
-    letter-spacing: -0.01em;
-    margin: var(--space-md) 0 6px;
-    display: block;
-}
-
-.contact-large--sub { font-size: clamp(20px, 3vw, 26px); }
-
+.contact-large,
 .download-cv {
     font-family: var(--label);
     font-weight: 500;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--rust);
+}
+.contact-large {
+    display: block;
+    margin: var(--space-md) 0 0;
+}
+
+.contact-linkedin {
+    display: block;
+    width: max-content;
+    color: var(--ink);
+    margin: var(--space-md) 0 0;
+    line-height: 0;
+    background: none;
+    transition: color 180ms ease;
+}
+.contact-linkedin svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    display: block;
+}
+.contact-linkedin:hover,
+.contact-linkedin:focus {
+    color: var(--rust);
+    background: none;
 }
 
 /* Section labels — kicker labels mid-article. Replaces ad-hoc inline margins. */
