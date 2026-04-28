@@ -82,7 +82,16 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    color-scheme: light;
+    -webkit-tap-highlight-color: rgba(180, 83, 26, 0.18);
+}
+
+button, a, [role="switch"], [role="button"], summary, label {
+    touch-action: manipulation;
+}
 
 /* Smooth scroll for anchor links (e.g. cover scroll-cue → #toc) */
 html { scroll-behavior: smooth; }
@@ -210,7 +219,7 @@ a:hover {
 .masthead {
     border-top: 1px solid var(--ink);
     border-bottom: 1px solid var(--rule);
-    padding: 14px var(--gutter);
+    padding: 14px max(var(--gutter), env(safe-area-inset-right)) 14px max(var(--gutter), env(safe-area-inset-left));
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -371,31 +380,6 @@ body.anim-ticker .cover__hero { --hero-chrome: 42px; }
     margin: 0 0.45em;
 }
 
-.cover__epigraph {
-    margin: var(--space-lg) auto 0;
-    max-width: 30ch;
-    padding: 0;
-    border: 0;
-    text-align: center;
-}
-.cover__epigraph-text {
-    font-family: var(--serif-display);
-    font-style: italic;
-    font-weight: 400;
-    /* Smaller than disciplines line — it's a supporting epigraph */
-    font-size: clamp(18px, 2.1vw, 22px);
-    line-height: 1.35;
-    color: var(--ink);
-    margin: 0;
-    text-wrap: balance;
-}
-.cover__epigraph-cite {
-    margin: 10px 0 0;
-    font-variant-caps: all-small-caps;
-    letter-spacing: 0.16em;
-    font-size: 10px;
-}
-
 .cover__masthead-word .ch {
     display: inline-block;
     will-change: transform, opacity;
@@ -469,8 +453,7 @@ body.anim-ticker .cover__hero { --hero-chrome: 42px; }
     background: none;
 }
 .toc__item { transition: border-color 180ms ease; }
-.toc__item:has(.toc__link:hover),
-.toc__item:has(.toc__link:hover) + .toc__item { border-color: var(--rust); }
+.toc__item:has(.toc__link:hover) { border-color: var(--rust); }
 .toc__link:hover { background: none; color: var(--rust); }
 .toc__link:hover .toc__title-text,
 .toc__link:hover .toc__num {
@@ -550,7 +533,6 @@ body.anim-ticker .cover__hero { --hero-chrome: 42px; }
 
 /* Drop cap --------------------------------------------------------------- */
 
-.has-dropcap::first-letter,
 p.dropcap::first-letter {
     font-family: var(--serif-display);
     font-weight: 700;
@@ -627,7 +609,6 @@ p.dropcap::first-letter {
 }
 .figure__embed--video { aspect-ratio: 16 / 9; }
 .figure__embed--square { aspect-ratio: 1 / 1; }
-.figure__embed--audio { aspect-ratio: auto; min-height: 180px; }
 
 .figure__caption {
     margin-top: 14px;
@@ -780,42 +761,6 @@ p.dropcap::first-letter {
     letter-spacing: -0.01em;
     margin: 0 0 16px;
     font-style: italic;
-}
-
-.logline-list {
-    list-style: none;
-    padding: 0;
-    margin: var(--space-md) 0 0;
-}
-.logline-list li {
-    padding: 16px 0;
-    border-top: 1px solid var(--rule);
-}
-.logline-list li:last-child { border-bottom: 1px solid var(--rule); }
-
-.logline__title {
-    font-family: var(--serif-display);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-    display: block;
-    letter-spacing: -0.01em;
-}
-
-.logline__text {
-    display: block;
-    margin-top: 4px;
-    color: var(--ink-80);
-}
-
-.archive-subhead {
-    font-family: var(--label);
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin: var(--space-lg) 0 var(--space-sm);
 }
 
 .screenplay {
@@ -1073,94 +1018,6 @@ ol.episode-index > li::marker { content: ""; }
     .episode__links a { margin: 0 0 0 14px; }
 }
 
-/* Guest wall */
-.guest-wall {
-    margin: var(--space-xl) 0 0;
-    padding: 32px 0 8px;
-    border-top: 1px solid var(--rule);
-}
-.guest-wall__label {
-    font-family: var(--label);
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    margin: 0 0 24px;
-}
-.guest-wall__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 0;
-    border-top: 1px solid var(--rule);
-    border-left: 1px solid var(--rule);
-}
-.guest-wall__list li {
-    padding: 20px 16px;
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    min-height: 96px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.guest-wall__name {
-    font-family: var(--serif-display);
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: -0.005em;
-    line-height: 1.2;
-}
-.guest-wall__role {
-    display: block;
-    margin-top: 4px;
-    font-family: var(--label);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-}
-
-/* -----  Blockbusters v2 — behind-the-scenes feature  ------------------- */
-
-/* A/B toggle strip — tiny, sits right under the masthead */
-.ab-strip {
-    max-width: var(--content-max);
-    margin: 0 auto;
-    padding: 14px var(--gutter) 0;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-family: var(--label);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-}
-.ab-strip__label { color: var(--rust); }
-.ab-strip__links { display: flex; gap: 14px; }
-.ab-strip__links a {
-    padding: 4px 8px;
-    border: 1px solid var(--rule);
-    background: none;
-    color: var(--ink-60);
-    transition: color 180ms ease, border-color 180ms ease;
-}
-.ab-strip__links a:hover {
-    color: var(--rust);
-    border-color: var(--rust);
-    background: none;
-}
-.ab-strip__links a[aria-current="page"] {
-    color: var(--ink);
-    border-color: var(--ink);
-}
-
 /* What this taught me — sidebar inside body flow */
 .taught {
     margin: 56px 0;
@@ -1186,106 +1043,11 @@ ol.episode-index > li::marker { content: ""; }
     color: var(--ink);
 }
 
-/* Listen proof block — closing figure, flat (no dashed placeholder frame) */
-.listen-proof {
-    margin: var(--space-2xl) 0 var(--space-md);
-    padding: 32px clamp(20px, 4vw, 40px);
-    border: 1px solid var(--ink);
-    background: var(--cream);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    align-items: center;
-}
-@media (min-width: 640px) {
-    .listen-proof {
-        grid-template-columns: 180px 1fr;
-        gap: 32px;
-    }
-}
-
-.listen-proof__cover {
-    aspect-ratio: 16 / 9;
-    width: 180px;
-    max-width: 100%;
-    background: var(--cream-tint);
-    border: 1px solid var(--rule);
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    text-decoration: none;
-    background-image: none;
-}
-.listen-proof__cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.listen-proof__cover:hover { border-color: var(--rust); background: var(--cream-tint); }
-
-.listen-proof__body { min-width: 0; }
-
-.listen-proof__show-label {
-    font-family: var(--label);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-60);
-    margin: 0 0 4px;
-}
-.listen-proof__title {
-    font-family: var(--serif-display);
-    font-weight: 700;
-    font-size: clamp(28px, 4vw, 36px);
-    letter-spacing: -0.02em;
-    margin: 0 0 8px;
-    line-height: 1;
-}
-.listen-proof__desc {
-    font-family: var(--serif-body);
-    font-style: italic;
-    font-size: 17px;
-    line-height: 1.4;
-    margin: 0 0 18px;
-    color: var(--ink-80);
-}
-.listen-proof__links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 14px;
-    font-family: var(--label);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-.listen-proof__links a {
-    background: none;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 2px;
-    color: var(--ink);
-}
-.listen-proof__links a:hover {
-    color: var(--rust);
-    border-bottom-color: var(--rust);
-    background: none;
-}
-.listen-proof__links .sep { color: var(--ink-40); }
-.listen-proof__links .all {
-    color: var(--rust);
-    border-bottom-color: var(--rust);
-}
-
 /* -----  Colophon footer  ------------------------------------------------ */
 
 .colophon {
     margin-top: var(--space-3xl);
-    padding: 28px var(--gutter) var(--space-2xl);
+    padding: 28px max(var(--gutter), env(safe-area-inset-right)) max(var(--space-2xl), env(safe-area-inset-bottom)) max(var(--gutter), env(safe-area-inset-left));
     border-top: 1px solid var(--rule);
 }
 
@@ -1337,17 +1099,8 @@ ol.episode-index > li::marker { content: ""; }
 /* -----  Cover kinetic type (per-animation gated)  --------------------- */
 
 /*
- * Four independent cover animations, each gated by its own body class:
- *   .anim-letter       — letter-drop on the masthead word
- *   .anim-typewriter   — typewriter reveal on the standfirst
- *   .anim-ticker       — horizontal marquee strip runs
- *   .anim-toc          — staggered fade-in on TOC items + dateline
- *
- * When a class is ABSENT, the element renders in its final state with NO motion.
- * When PRESENT, the animation plays exactly once (re-triggered by toggling
- * `.cover-ready`). The masthead and standfirst always start visible — the
- * animations add motion rather than gate visibility, so turning everything
- * off leaves a clean static cover.
+ * Three cover animations gated by body classes (.anim-letter, .anim-ticker, .anim-toc).
+ * Each plays once when .cover-ready is added.
  */
 
 /* Masthead — always visible baseline */
@@ -1404,42 +1157,6 @@ body.anim-ticker .masthead { display: none; }
 .ticker__track:hover { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
     .ticker__track { animation: none; }
-}
-
-/* (c) Typewriter on standfirst — caret + width reveal */
-.cover__standfirst {
-    position: relative;
-}
-body.anim-typewriter .cover__standfirst {
-    display: inline-block;
-    overflow: hidden;
-    white-space: normal;
-    border-right: none; /* caret handled by ::after */
-}
-body.anim-typewriter .cover__standfirst::after {
-    content: "";
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background: var(--rust);
-    margin-left: 4px;
-    vertical-align: -0.12em;
-    animation: caretBlink 700ms steps(1) infinite;
-}
-body.anim-typewriter.cover-ready .cover__standfirst .typed {
-    animation: typeReveal 2600ms steps(60, end) 400ms both;
-    overflow: hidden;
-    white-space: normal;
-    display: inline-block;
-    max-width: 100%;
-}
-body.anim-typewriter:not(.cover-ready) .cover__standfirst .typed { opacity: 0; }
-@keyframes typeReveal {
-    from { clip-path: inset(0 100% 0 0); }
-    to   { clip-path: inset(0 0 0 0); }
-}
-@keyframes caretBlink {
-    50% { opacity: 0; }
 }
 
 /* (d) TOC stagger + dateline fade */
@@ -1667,6 +1384,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
+    overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     scroll-padding-left: 4px;
     -webkit-overflow-scrolling: touch;
