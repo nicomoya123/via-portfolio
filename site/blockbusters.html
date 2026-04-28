@@ -24,6 +24,50 @@
     })();
     </script>
 
+    <script>
+    (function () {
+        if (!window.clarity) return;
+        try {
+            var p = new URLSearchParams(location.search);
+            var src = p.get('utm_source');
+            var med = p.get('utm_medium');
+            var camp = p.get('utm_campaign');
+            try {
+                if (!src) src = sessionStorage.getItem('avia_src');
+                if (!med) med = sessionStorage.getItem('avia_med');
+                if (!camp) camp = sessionStorage.getItem('avia_camp');
+            } catch (e) {}
+            if (!src) {
+                var ref = document.referrer;
+                if (ref) {
+                    try {
+                        var host = new URL(ref).hostname.replace(/^www\./, '');
+                        if (host && host.indexOf('aviabu.com') === -1) {
+                            if (/linkedin\./i.test(host)) src = 'linkedin';
+                            else if (/(google|bing|duckduckgo|yahoo|ecosia)\./i.test(host)) src = 'search';
+                            else src = host;
+                        }
+                    } catch (e) {}
+                }
+                if (!src) src = 'direct';
+            }
+            try {
+                sessionStorage.setItem('avia_src', src);
+                if (med) sessionStorage.setItem('avia_med', med);
+                if (camp) sessionStorage.setItem('avia_camp', camp);
+            } catch (e) {}
+            try {
+                if (/[?&]utm_/i.test(location.search)) {
+                    history.replaceState(null, '', location.pathname + location.hash);
+                }
+            } catch (e) {}
+            window.clarity('set', 'source', src);
+            if (med) window.clarity('set', 'medium', med);
+            if (camp) window.clarity('set', 'campaign', camp);
+        } catch (e) {}
+    })();
+    </script>
+
     <style>
         /* Cover hero — mirrors the TAU Shop lifestyle figure treatment */
         .cover-hero {
