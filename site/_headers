@@ -4,7 +4,7 @@
   X-Frame-Options: SAMEORIGIN
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Permissions-Policy: interest-cohort=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.linkedin.com https://www.instagram.com; connect-src 'self' https://*.clarity.ms; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://scripts.clarity.ms https://www.instagram.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://www.instagram.com; img-src 'self' data: https:; font-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.linkedin.com https://www.instagram.com; connect-src 'self' https://*.clarity.ms https://www.instagram.com https://graph.instagram.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'
 
 /*.html
   Cache-Control: public, max-age=360, must-revalidate
