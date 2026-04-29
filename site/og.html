@@ -7,6 +7,13 @@
     <style>
         @font-face {
             font-family: "Fraunces";
+            src: url("fonts/fraunces-v38-latin-regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: block;
+        }
+        @font-face {
+            font-family: "Fraunces";
             src: url("fonts/fraunces-v38-latin-700.woff2") format("woff2");
             font-weight: 700;
             font-style: normal;
@@ -37,6 +44,7 @@
         :root {
             --paper: #F5F0E8;
             --ink: #1A1A1A;
+            --ink-40: rgba(26, 26, 26, 0.40);
             --ink-60: rgba(26, 26, 26, 0.60);
             --rust: #B4531A;
         }
@@ -55,114 +63,80 @@
             font-family: "Source Serif 4", Georgia, serif;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            box-sizing: border-box;
-            padding: 56px 80px;
-        }
-
-        .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-family: "Inter", system-ui, sans-serif;
-            font-weight: 500;
-            font-size: 18px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--ink);
-        }
-
-        .top__meta { color: var(--ink-60); }
-
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            box-sizing: border-box;
+            padding: 80px 96px;
             text-align: center;
         }
 
         .name {
             font-family: "Fraunces", Georgia, serif;
-            font-weight: 700;
-            font-size: 124px;
-            line-height: 1;
-            letter-spacing: -0.02em;
+            font-weight: 400;
+            font-variation-settings: "opsz" 144;
+            font-size: 140px;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
             color: var(--ink);
-            margin: 0 0 36px;
+            margin: 0;
             white-space: nowrap;
         }
 
         .disciplines {
-            font-family: "Inter", system-ui, sans-serif;
-            font-weight: 500;
-            font-size: 22px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--ink-60);
-            margin: 0 0 40px;
+            margin: 36px 0 0;
+            max-width: 44ch;
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1.4;
+            color: var(--ink);
         }
 
         .disciplines .dot {
-            display: inline-block;
-            margin: 0 14px;
-            color: var(--rust);
+            color: var(--ink-40);
+            margin: 0 0.45em;
         }
 
         .standfirst {
+            margin: 32px 0 0;
+            max-width: 36ch;
             font-family: "Source Serif 4", Georgia, serif;
-            font-size: 28px;
-            line-height: 1.45;
-            margin: 0;
-        }
-
-        .standfirst__quote {
-            color: var(--rust);
-            display: block;
-        }
-
-        .standfirst__attr {
             font-style: italic;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.45;
             color: var(--ink);
-            display: block;
-            margin-top: 6px;
         }
 
-        .bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-family: "Inter", system-ui, sans-serif;
+        .standfirst em {
+            font-style: italic;
+        }
+
+        .dateline {
+            margin: 44px 0 0;
+            font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
             font-weight: 500;
-            font-size: 16px;
-            letter-spacing: 0.16em;
+            font-size: 13px;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
+            line-height: 1.4;
             color: var(--ink-60);
         }
 
-        .bottom__url { color: var(--rust); }
+        .dateline .dot {
+            color: var(--rust);
+            margin: 0 0.4em;
+        }
     </style>
 </head>
 <body>
-    <div class="top">
-        <span>Avia Ben Uriah</span>
-        <span class="top__meta">Portfolio</span>
-    </div>
-
-    <div class="hero">
-        <h1 class="name">Avia Ben Uriah</h1>
-        <p class="disciplines">
-            Brand Narrative<span class="dot">·</span>Creative<span class="dot">·</span>Content Marketing<span class="dot">·</span>Screenwriting
-        </p>
-        <p class="standfirst">
-            <span class="standfirst__quote">&ldquo;The most personal is the most creative.&rdquo;</span>
-            <span class="standfirst__attr">Martin Scorsese said it. I try to work by it.</span>
-        </p>
-    </div>
-
-    <div class="bottom">
-        <span>Tel Aviv</span>
-        <span class="bottom__url">aviabu.com</span>
-    </div>
+    <h1 class="name">Avia Ben Uriah</h1>
+    <p class="disciplines">
+        Brand Narrative<span class="dot">·</span>Creative<span class="dot">·</span>Content Marketing<span class="dot">·</span>Screenwriting
+    </p>
+    <p class="dateline">
+        Tel Aviv <span class="dot">·</span> Portfolio
+    </p>
 </body>
 </html>
