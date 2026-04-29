@@ -1449,7 +1449,7 @@ body.cover-page.anim-toc.cover-ready .toc__item {
 }
 .reel-card__crop > .reel-card__embed,
 .reel-card__crop > iframe.instagram-media-rendered {
-    margin: 0 0 -160px !important;
+    margin: 0 0 -190px !important;
     display: block;
 }
 .reel-card__thumb--filled {
